@@ -1,0 +1,198 @@
+#particles-js {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.firstPage-Ku {
+    @include flex(column, center, "");
+    background-color: rgb(48, 48, 48);
+    width: 100vw;
+    height: 100vh;
+}
+
+.percent-Ku {
+    display: inline;
+    color: $yellow;
+    text-align: center;
+    font-size: 1.50rem;
+    line-height: 1.25;
+    user-select: none;
+
+    .smallPercent-Ku {
+        display: none;
+        font-size: 1.25rem;
+        line-height: 1;
+    }
+
+    #percentMax-Ku {
+        display: none;
+    }    
+}
+
+.progress-Ku {
+    @include flex(row, "", center);
+
+    .progress {
+        height: 1.50rem;
+        width: 50vw;
+        background-color: unset;
+        border-radius: unset;
+    }
+
+    .progress-bar {
+        background-color: $yellow;
+    }
+}
+
+/* Progress bar and percent on the right */
+#progressBarRight-Ku {
+    transform: rotate(180deg);
+}
+
+#percentRight-Ku {
+    @include flex("", flex-end, "");
+    flex: auto;
+    transition: padding-right .6s ease;
+}
+
+/* Percent on the left */
+#percentLeft-Ku {
+    transition: padding-left .6s ease;
+}
+
+/* Cube */
+.perspective-Ku {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    perspective: 1500px;
+    animation: scaleCube 4s infinite linear;
+}
+  
+.cube-Ku {
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(90deg) rotateY(90deg);
+    animation: rotateCube 5s infinite linear;
+
+    span {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border: 2px solid $yellow;
+    }
+
+    #front {
+        transform: translateX(-100px) translateY(-100px) translateZ(100px);
+    }
+      
+    #back {
+        transform: translateX(-100px) translateY(-100px) translateZ(-100px);
+    }
+      
+    #right {
+        transform: translateY(-100px) rotateY(90deg);
+    }
+      
+    #left {
+        transform: translateY(-100px) translateX(-200px) rotateY(90deg);
+    }
+      
+    #top {
+        transform: translateX(-100px) translateY(-200px) rotateX(90deg);
+    }
+      
+    #bottom {
+        transform: translateX(-100px) rotateX(90deg);
+    }
+}
+
+/* Animation */
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes rotateCube {
+    from {
+		transform: rotateX(0deg) rotateY(0deg);
+    }
+
+	to { 
+		transform: rotateX(360deg) rotateY(360deg);
+	}
+}
+
+@keyframes scaleCube {
+    from {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.7);
+        opacity: 0.4;
+    }
+
+	to { 
+        transform: scale(1.1);
+        opacity: 1;
+	}
+}
+
+/*--------------------------------------------------------- TABLET --------------------------------------------------------- */ 
+@media screen and (min-width: 768px) {
+    .cube-Ku {
+        span {
+            width: 400px;
+            height: 400px;
+        }
+    
+        #front {
+            transform: translateX(-200px) translateY(-200px) translateZ(200px);
+        }
+          
+        #back {
+            transform: translateX(-200px) translateY(-200px) translateZ(-200px);
+        }
+          
+        #right {
+            transform: translateY(-200px) rotateY(90deg);
+        }
+          
+        #left {
+            transform: translateY(-200px) translateX(-400px) rotateY(90deg);
+        }
+          
+        #top {
+            transform: translateX(-200px) translateY(-400px) rotateX(90deg);
+        }
+          
+        #bottom {
+            transform: translateX(-200px) rotateX(90deg);
+        }
+    }
+    
+    @keyframes scaleCube {
+        from {
+            transform: scale(0.9);
+            opacity: 1;
+        }
+    
+        50% {
+            transform: scale(0.5);
+            opacity: 0.4;
+        }
+    
+        to { 
+            transform: scale(0.9);
+            opacity: 1;
+        }
+    }
+}

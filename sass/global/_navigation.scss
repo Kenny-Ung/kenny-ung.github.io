@@ -1,0 +1,349 @@
+#check {
+    display: none;
+}
+
+#check:checked ~ .menu-mobile-Ku {
+    left: 0%;
+}
+
+#check:checked ~ #btnBurger {
+    .bars {
+        transform: rotate(45deg);
+        
+    }
+
+    .bars::before {
+        opacity: 0;
+    }
+
+    .bars::after {
+        transform: rotate(-90deg);
+    }
+}
+
+label {
+    z-index: 1;
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    left: 88%;
+}
+
+.burger {
+    position: relative;
+    @include flex("", center, center);
+    width: 50px;
+    height: 50px;
+    transition: all 0.5s ease-in-out;
+    border: 3px solid $white;
+
+    .bars {
+        width: 30px;
+        height: 5px;
+        background-color: $white;
+        border-radius: 5px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .bars::before, .bars::after {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 5px;
+        background-color: $white;
+        border-radius: 5px;
+        transition: all 0.5s ease-in-out;  
+    }
+
+    .bars::before {
+        transform: translateY(-12px);
+    }
+
+    .bars::after {
+        transform: translateY(12px);
+    }
+}
+
+.menu-mobile-Ku {
+    background-color: tan;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 100%;
+    padding-top: 5rem;
+    transition: all 0.5s ease-in-out;
+}
+
+
+.logo {
+    z-index: 1;
+    cursor: pointer;
+    width: 60px;
+    position: absolute;
+    top: 25%;
+    left: 3%;
+
+    .st1 {
+        fill: $yellow;
+    }
+    
+    .st2 {
+        fill: #333;
+    }
+    .st3 {
+        fill: $white;
+    }
+}
+
+#menu {
+    @include flex(column, space-between, center);
+    height: 10vh;
+
+    .divRight {
+        @include flex(column, "", "");
+        font-size: 1.50rem;
+        text-align: center;
+
+        a {
+            position: relative;
+            text-decoration: none;
+            color: $white;
+            padding: 1rem;
+        }
+
+        span:first-child:before {
+            content: '';
+            position: absolute;
+            top: 23px;
+            left: 14px;
+            width: 8px;
+            height: 8px;
+            background: transparent;
+            border-top: 2px solid $yellow;
+            border-left: 2px solid $yellow;
+            transition: 0.2s;
+            opacity: 0;
+        }
+
+        a:hover span:first-child:before {
+            top: unset;
+            left: 8px;
+            opacity: 1;
+        }
+    
+        span:first-child::after {
+            content: '';
+            position: absolute;
+            top: 23px;
+            right: 14px;
+            width: 8px;
+            height: 8px;
+            background: transparent;
+            border-top: 2px solid $yellow;
+            border-right: 2px solid $yellow;
+            transition: 0.2s;
+            opacity: 0;
+        }
+
+        a:hover span:first-child:after {
+            top: unset;
+            right: 8px;
+            opacity: 1;
+        }
+    
+        span:last-child:before {
+            content: '';
+            position: absolute;
+            top: 39px;
+            left: 14px;
+            width: 8px;
+            height: 8px;
+            background: transparent;
+            border-bottom: 2px solid $yellow;
+            border-left: 2px solid $yellow;
+            transition: 0.2s;
+            opacity: 0;
+        }
+
+        a:hover span:last-child:before {
+            top: 47px;
+            left: 8px;
+            opacity: 1;
+        }
+    
+        span:last-child::after {
+            content: '';
+            position: absolute;
+            top: 39px;
+            right: 14px;
+            width: 8px;
+            height: 8px;
+            background: transparent;
+            border-bottom: 2px solid $yellow;
+            border-right: 2px solid $yellow;
+            transition: 0.2s;
+            opacity: 0;
+        }
+
+        a:hover span:last-child:after {
+            top: 47px;
+            right: 8px;
+            opacity: 1;
+        }
+    }
+
+    a:hover {
+        color: $yellow;
+    }
+}
+
+/*--------------------------------------------------------- TABLET --------------------------------------------------------- */  
+@media screen and (min-width: 768px) {
+    label {
+        display: none;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .menu-mobile-Ku {
+        all: unset;
+    }
+
+    .logo {
+        left: 47%;
+    }
+
+    #menu {
+        @include flex(row, space-between, center);
+        
+        .divRight {
+            font-size: 1rem;
+            display: block;
+            padding-left: 4rem;
+
+            span:first-child:before {
+                top: 16px;
+            }
+        
+            span:first-child::after {
+                top: 16px;
+            }
+        
+            span:last-child:before {
+                top: 29px;
+            }
+    
+            a:hover span:last-child:before {
+                top: 37px;
+            }
+        
+            span:last-child::after {
+                top: 29px;
+            }
+    
+            a:hover span:last-child:after {
+                top: 37px;
+            }
+        }
+
+        .divLeft {
+            display: block;
+            padding-right: 4rem;
+
+            a {
+                position: relative;
+                text-decoration: none;
+                color: $white;
+                padding: 1rem;
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+
+            a:hover {
+                color: $yellow;
+            }
+
+            span:first-child:before {
+                content: '';
+                position: absolute;
+                top: 16px;
+                left: 14px;
+                width: 8px;
+                height: 8px;
+                background: transparent;
+                border-top: 2px solid $yellow;
+                border-left: 2px solid $yellow;
+                transition: 0.2s;
+                opacity: 0;
+            }
+    
+            a:hover span:first-child:before {
+                top: unset;
+                left: 8px;
+                opacity: 1;
+            }
+        
+            span:first-child::after {
+                content: '';
+                position: absolute;
+                top: 16px;
+                right: 14px;
+                width: 8px;
+                height: 8px;
+                background: transparent;
+                border-top: 2px solid $yellow;
+                border-right: 2px solid $yellow;
+                transition: 0.2s;
+                opacity: 0;
+            }
+    
+            a:hover span:first-child:after {
+                top: unset;
+                right: 8px;
+                opacity: 1;
+            }
+        
+            span:last-child:before {
+                content: '';
+                position: absolute;
+                top: 29px;
+                left: 14px;
+                width: 8px;
+                height: 8px;
+                background: transparent;
+                border-bottom: 2px solid $yellow;
+                border-left: 2px solid $yellow;
+                transition: 0.2s;
+                opacity: 0;
+            }
+    
+            a:hover span:last-child:before {
+                top: 37px;
+                left: 8px;
+                opacity: 1;
+            }
+        
+            span:last-child::after {
+                content: '';
+                position: absolute;
+                top: 29px;
+                right: 14px;
+                width: 8px;
+                height: 8px;
+                background: transparent;
+                border-bottom: 2px solid $yellow;
+                border-right: 2px solid $yellow;
+                transition: 0.2s;
+                opacity: 0;
+            }
+    
+            a:hover span:last-child:after {
+                top: 37px;
+                right: 8px;
+                opacity: 1;
+            }
+        }
+    }
+}

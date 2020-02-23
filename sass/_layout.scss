@@ -1,0 +1,31 @@
+#global-Ku {
+    display: none;
+}
+
+body {
+    width: 100vw;
+    background-color: rgb(24, 24, 24);
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+header {
+    width: 100vw;
+    height: 10vh;
+    position: fixed;
+    background-color: rgb(24, 24, 24);
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    border-bottom: 1px solid $white;
+}
+
+footer {
+    background-color: rgb(12, 12, 12);
+    width: 100vw;
+    height: 25vh;
+}
