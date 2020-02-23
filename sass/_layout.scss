@@ -5,6 +5,7 @@
 body {
     width: 100vw;
     background-color: rgb(24, 24, 24);
+    font-family: 'Roboto Slab', ;
     
     &::-webkit-scrollbar {
         display: none;
@@ -13,7 +14,7 @@ body {
 
 header {
     width: 100vw;
-    height: 10vh;
+    height: 15vh;
     position: fixed;
     background-color: rgb(24, 24, 24);
 }
