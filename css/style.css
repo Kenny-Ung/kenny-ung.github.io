@@ -437,7 +437,6 @@ label {
   width: 30px;
   height: 5px;
   background-color: #e6e6e6;
-  border-radius: 5px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -448,19 +447,18 @@ label {
   width: 30px;
   height: 5px;
   background-color: #e6e6e6;
-  border-radius: 5px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .burger .bars::before {
-  -webkit-transform: translateY(-12px);
-          transform: translateY(-12px);
+  -webkit-transform: translateY(-11px);
+          transform: translateY(-11px);
 }
 
 .burger .bars::after {
-  -webkit-transform: translateY(12px);
-          transform: translateY(12px);
+  -webkit-transform: translateY(11px);
+          transform: translateY(11px);
 }
 
 .menu-mobile-Ku {
