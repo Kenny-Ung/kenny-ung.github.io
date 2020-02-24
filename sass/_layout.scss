@@ -1,4 +1,4 @@
-#global-Ku {
+#global {
     display: none;
 }
 
@@ -16,6 +16,7 @@ header {
     width: 100vw;
     height: 15vh;
     position: fixed;
+    z-index: 1;
     background-color: rgb(24, 24, 24);
 }
 
@@ -29,4 +30,8 @@ footer {
     background-color: rgb(12, 12, 12);
     width: 100vw;
     height: 25vh;
+}
+
+.container {
+    height: 100%;
 }

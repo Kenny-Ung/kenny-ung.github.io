@@ -11,10 +11,10 @@
 # FirstPage
 ## Global
     # Navigation
-    # About
+    # Home
     # Portfolio
-    # Skills
-    # contact
+    # About me
+    # Contact
     # Footer
 ------------------------------------------------------------ */
 
@@ -33,14 +33,14 @@
 /* # Navigation */
 @import "global/_navigation.scss";
 
-/* # About */
-@import "global/_about.scss";
+/* # Home */
+@import "global/_home.scss";
 
 /* # Portfolio */
 @import "global/_portfolio.scss";
 
-/* # Skills */
-@import "global/_skills.scss";
+/* # About */
+@import "global/_about.scss";
 
 /* # Contact */
 @import "global/_contact.scss";

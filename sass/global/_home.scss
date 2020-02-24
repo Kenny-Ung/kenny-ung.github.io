@@ -1,0 +1,76 @@
+#home {
+    
+    .row:nth-child(1) {
+        height: 25%;
+    }
+    
+    .row:nth-child(2) {
+        height: 50%;
+        //border: 2px solid $yellow;
+        margin-right: unset;
+        margin-left: unset;
+
+        .border1::before {
+            @include border("", "", "", "", 80px, 80px, 20px, "", 20px, "");
+        }
+    
+        // .border1::after {
+        //     @include border("", "", "", 46px, 8px, 8px, 3px, "", "", 3px);
+        // }
+    
+        .border2::before {
+            @include border("", 189px, "", "", 80px, 80px, "", 20px, 20px, "");
+        }
+    
+        // .border2::after {
+        //     @include border("", 189px, "", 46px, 8px, 8px, "", 3px, "", 3px);
+        // }
+    
+        .info {
+            @include flex(column, center, center);
+            color: $white;
+    
+            #name {
+                font-size: 4rem;
+                color: $yellow;
+                font-weight: bold;
+            }
+    
+            #profil::before {
+                content: '“';
+                font-size: 3rem;
+                position: relative;
+                left: -5px;
+                top: 10px;
+                color: $yellow;
+            }
+    
+            #profil::after {
+                content: '”';
+                font-size: 3rem;
+                position: relative;
+                left: 10px;
+                top: 34px;
+                color: $yellow;
+            }
+    
+            #description {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+/*--------------------------------------------------------- TABLET --------------------------------------------------------- */  
+@media screen and (min-width: 768px) { 
+    #home {
+        .row:nth-child(2) {
+            margin-right: -15px;
+            margin-left: -15px;
+
+            .info {
+                @include flex(column, center, flex-start);
+            }
+        }
+    }
+}

@@ -4,14 +4,14 @@
     height: 100vh;
 }
 
-.firstPage-Ku {
+.firstPage {
     @include flex(column, center, "");
     background-color: rgb(48, 48, 48);
     width: 100vw;
     height: 100vh;
 }
 
-.percent-Ku {
+.percent {
     display: inline;
     color: $yellow;
     text-align: center;
@@ -19,18 +19,18 @@
     line-height: 1.25;
     user-select: none;
 
-    .smallPercent-Ku {
+    .smallPercent {
         display: none;
         font-size: 1.25rem;
         line-height: 1;
     }
 
-    #percentMax-Ku {
+    #percentMax {
         display: none;
     }    
 }
 
-.progress-Ku {
+.progressBar {
     @include flex(row, "", center);
 
     .progress {
@@ -46,23 +46,23 @@
 }
 
 /* Progress bar and percent on the right */
-#progressBarRight-Ku {
+#progressBarRight {
     transform: rotate(180deg);
 }
 
-#percentRight-Ku {
+#percentRight {
     @include flex("", flex-end, "");
     flex: auto;
     transition: padding-right .6s ease;
 }
 
 /* Percent on the left */
-#percentLeft-Ku {
+#percentLeft {
     transition: padding-left .6s ease;
 }
 
 /* Cube */
-.perspective-Ku {
+.perspective {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -70,7 +70,7 @@
     animation: scaleCube 4s infinite linear;
 }
   
-.cube-Ku {
+.cube {
     position: relative;
     transform-style: preserve-3d;
     transform: rotateX(90deg) rotateY(90deg);
@@ -148,7 +148,7 @@
 
 /*--------------------------------------------------------- TABLET --------------------------------------------------------- */ 
 @media screen and (min-width: 768px) {
-    .cube-Ku {
+    .cube {
         span {
             width: 400px;
             height: 400px;

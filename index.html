@@ -11,13 +11,13 @@
         <title>Kenny Ung</title>
     </head>
 <body>
-    <section class="firstPage-Ku">
+    <section class="firstPage">
         <!-- Particles -->
         <div id="particles-js"></div>
 
          <!-- Cube Animation -->
-        <div class="perspective-Ku">
-            <div class="cube-Ku">
+        <div class="perspective">
+            <div class="cube">
                 <span id="front"></span>
                 <span id="right"></span>
                 <span id="back"></span>
@@ -28,31 +28,33 @@
         </div>
 
         <!-- Percent -->
-        <div class="percent-Ku">
-            <div id="percentMax-Ku" class="font-weight-bold">100%</div>
-            <div class="smallPercent-Ku" class="invisible">
-                <div id="percentLeft-Ku">0%</div>
-                <div id="percentRight-Ku">0%</div>
+        <div class="percent">
+            <div id="percentMax" class="font-weight-bold">100%</div>
+            <div class="smallPercent" class="invisible">
+                <div id="percentLeft">0%</div>
+                <div id="percentRight">0%</div>
             </div>
         </div>
 
         <!-- Progress bar -->
-        <div class="progress-Ku">
+        <div class="progressBar">
             <div class="progress"> 
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50"></div>
             </div>
-            <div class="progress" id="progressBarRight-Ku">
+            <div class="progress" id="progressBarRight">
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50"></div>
             </div>
         </div>
     </section>
 
-    <div id="global-Ku">
+    <div id="global">
         <header>
             <input type="checkbox" id="check">
             <label for="check" id="btnBurger">
                 <div class="burger">
+                    <span class="border1"></span>
                     <div class="bars"></div>
+                    <span class="border2"></span>
                 </div>
             </label>
 
@@ -69,13 +71,13 @@
                 </svg>
             </div>
             
-            <div class="menu-mobile-Ku">
+            <div class="menu-mobile">
                 <div id="menu">
                     <div class="divRight">
-                        <a href="#about-Ku">About<span></span><span></span></a>
-                        <a href="#portfolio-Ku">Portfolio<span></span><span></span></a>
-                        <a href="#skills-Ku">Compétences<span></span><span></span></a>
-                        <a href="#contact-Ku">Contact<span></span><span></span></a>
+                        <a href="#home">Accueil<span></span><span></span></a>
+                        <a href="#portfolio">Portfolio<span></span><span></span></a>
+                        <a href="#about">À propos<span></span><span></span></a>
+                        <a href="#contact">Contact<span></span><span></span></a>
                     </div>
                     <div class="divLeft">
                         <a href="#">Li<span></span><span></span></a>
@@ -86,10 +88,41 @@
             </div> 
         </header>
 
-        <section id="about-Ku"></section>
-        <section id="portfolio-Ku"></section>
-        <section id="skills-Ku"></section>
-        <section id="contact-Ku"></section>
+        <section id="home">
+            <div class="container">
+                <div class="row">
+                    <div class="w-100"></div>
+                </div>
+                <div class="row ">
+                    <span class="border1"></span>
+                    <span class="border2"></span>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10 info">
+                        <p id="name">Kenny Ung</p>
+                        <p id="profil">Étudiant | Intégrateur multimédia</p> 
+                        <p id="description">._.</p>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    
+                </div>
+                <div class="row">
+                    <div class="w-100"></div>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio">
+            <div class="container">
+                <div class="row">
+                    <div class="w-100"></div>
+                </div>
+                <div class="row"></div>
+                <div class="row">
+                    <div class="w-100"></div>
+                </div>
+            </div>
+        </section>
+        <section id="about"></section>
+        <section id="contact"></section>
 
         <footer>
             <div class="credits">

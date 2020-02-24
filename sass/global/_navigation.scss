@@ -6,14 +6,13 @@ header {
     display: none;
 }
 
-#check:checked ~ .menu-mobile-Ku {
+#check:checked ~ .menu-mobile {
     left: 0%;
 }
 
 #check:checked ~ #btnBurger {
     .bars {
-        transform: rotate(45deg);
-        
+        transform: rotate(45deg); 
     }
 
     .bars::before {
@@ -34,7 +33,21 @@ label {
 }
 
 .burger:hover {
-    border: 3px solid $yellow;
+    .border1::before {
+        @include border(0px, "", -2px, "", 8px, 8px, 3px, "", 3px, "");
+    }
+
+    .border1::after {
+        @include border(0px, "", "", -2px, 8px, 8px, 3px, "", "", 3px);
+    }
+
+    .border2::before {
+        @include border(40px, "", -2px, "", 8px, 8px, "", 3px, 3px, "");
+    }
+
+    .border2::after {
+        @include border(40px, "", "", -2px, 8px, 8px, "", 3px, "", 3px);
+    }
 }
 
 .burger {
@@ -42,8 +55,6 @@ label {
     @include flex("", center, center);
     width: 50px;
     height: 50px;
-    transition: all 0.3s ease-in-out;
-    border: 3px solid $white;
 
     .bars {
         width: 30px;
@@ -70,7 +81,7 @@ label {
     }
 }
 
-.menu-mobile-Ku {
+.menu-mobile {
     background-color: black;
     width: 100%;
     height: 100%;
@@ -79,7 +90,6 @@ label {
     padding-top: 12rem;
     transition: all 0.5s ease-in-out;
 }
-
 
 .logo {
     z-index: 1;
@@ -119,15 +129,7 @@ label {
         }
 
         span:first-child:before {
-            content: '';
-            position: absolute;
-            top: 23px;
-            left: 14px;
-            width: 8px;
-            height: 8px;
-            background: transparent;
-            border-top: 2px solid $yellow;
-            border-left: 2px solid $yellow;
+            @include border(23px, "", 14px, "", 8px, 8px, 2px, "", 2px, "");
             transition: 0.2s;
             opacity: 0;
         }
@@ -139,15 +141,7 @@ label {
         }
     
         span:first-child::after {
-            content: '';
-            position: absolute;
-            top: 23px;
-            right: 14px;
-            width: 8px;
-            height: 8px;
-            background: transparent;
-            border-top: 2px solid $yellow;
-            border-right: 2px solid $yellow;
+            @include border(23px, "", "", 14px, 8px, 8px, 2px, "", "", 2px);
             transition: 0.2s;
             opacity: 0;
         }
@@ -159,15 +153,7 @@ label {
         }
     
         span:last-child:before {
-            content: '';
-            position: absolute;
-            top: 39px;
-            left: 14px;
-            width: 8px;
-            height: 8px;
-            background: transparent;
-            border-bottom: 2px solid $yellow;
-            border-left: 2px solid $yellow;
+            @include border(39px, "", 14px, "", 8px, 8px, "", 2px, 2px, "");
             transition: 0.2s;
             opacity: 0;
         }
@@ -179,15 +165,7 @@ label {
         }
     
         span:last-child::after {
-            content: '';
-            position: absolute;
-            top: 39px;
-            right: 14px;
-            width: 8px;
-            height: 8px;
-            background: transparent;
-            border-bottom: 2px solid $yellow;
-            border-right: 2px solid $yellow;
+            @include border(39px, "", "", 14px, 8px, 8px, "", 2px, "", 2px);
             transition: 0.2s;
             opacity: 0;
         }
@@ -208,6 +186,12 @@ label {
 @media screen and (min-width: 768px) {
     header {
         @include flex(column, center, "");
+        transition: all 0.5s;
+        // opacity: 0;
+
+        // &:hover {
+        //     opacity: 1;
+        // }
     }
 
     label {
@@ -218,7 +202,7 @@ label {
         display: none;
     }
 
-    .menu-mobile-Ku {
+    .menu-mobile {
         all: unset;
     }
 
@@ -277,15 +261,7 @@ label {
             }
 
             span:first-child:before {
-                content: '';
-                position: absolute;
-                top: 14px;
-                left: 14px;
-                width: 8px;
-                height: 8px;
-                background: transparent;
-                border-top: 2px solid $yellow;
-                border-left: 2px solid $yellow;
+                @include border(14px, "", 14px, "", 8px, 8px, 2px, "", 2px, "");
                 transition: 0.2s;
                 opacity: 0;
             }
@@ -297,15 +273,7 @@ label {
             }
         
             span:first-child::after {
-                content: '';
-                position: absolute;
-                top: 14px;
-                right: 14px;
-                width: 8px;
-                height: 8px;
-                background: transparent;
-                border-top: 2px solid $yellow;
-                border-right: 2px solid $yellow;
+                @include border(14px, "", "", 14px, 8px, 8px, 2px, "", "", 2px);
                 transition: 0.2s;
                 opacity: 0;
             }
@@ -317,15 +285,7 @@ label {
             }
         
             span:last-child:before {
-                content: '';
-                position: absolute;
-                top: 30px;
-                left: 14px;
-                width: 8px;
-                height: 8px;
-                background: transparent;
-                border-bottom: 2px solid $yellow;
-                border-left: 2px solid $yellow;
+                @include border(30px, "", 14px, "", 8px, 8px, "", 2px, 2px, "");
                 transition: 0.2s;
                 opacity: 0;
             }
@@ -337,15 +297,7 @@ label {
             }
         
             span:last-child::after {
-                content: '';
-                position: absolute;
-                top: 30px;
-                right: 14px;
-                width: 8px;
-                height: 8px;
-                background: transparent;
-                border-bottom: 2px solid $yellow;
-                border-right: 2px solid $yellow;
+                @include border(30px, "", "", 14px, 8px, 8px, "", 2px, "", 2px);
                 transition: 0.2s;
                 opacity: 0;
             }

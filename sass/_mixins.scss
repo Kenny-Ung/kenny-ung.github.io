@@ -4,3 +4,19 @@
     justify-content: $justify;
     align-items: $align;
 }
+
+@mixin border($top, $bottom, $left, $right, $width, $height, $BpxTop, $BpxBottom, $BpxLeft, $BpxRight) {
+    content: '';
+    position: absolute;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+    width: $width;
+    height: $height;
+    background: transparent;
+    border-top: $BpxTop solid $yellow;
+    border-bottom: $BpxBottom solid $yellow;
+    border-left: $BpxLeft solid $yellow;
+    border-right: $BpxRight solid $yellow;
+}

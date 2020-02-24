@@ -7,14 +7,14 @@
  * @return aucun
 */
 function afficherProgressBar() {
-    var oPagePrincipal = document.getElementById("global-Ku");
-    var oPage = document.getElementsByClassName("firstPage-Ku");
+    var oPagePrincipal = document.getElementById("global");
+    var oPage = document.getElementsByClassName("firstPage");
     var oProgressBar = document.getElementsByClassName("progress-bar");
-    var oSmallPercent = document.getElementsByClassName("smallPercent-Ku");
-    var oPercentLeft = document.getElementById("percentLeft-Ku");
-    var oPercentRight = document.getElementById("percentRight-Ku");
-    var oPercentMax = document.getElementById("percentMax-Ku");
-    var oPercentTotal = document.getElementsByClassName("smallPercent-Ku");
+    var oSmallPercent = document.getElementsByClassName("smallPercent");
+    var oPercentLeft = document.getElementById("percentLeft");
+    var oPercentRight = document.getElementById("percentRight");
+    var oPercentMax = document.getElementById("percentMax");
+    var oPercentTotal = document.getElementsByClassName("smallPercent");
     var counter = 0;
     var counterPercent = 0;
     var progress = 0;
