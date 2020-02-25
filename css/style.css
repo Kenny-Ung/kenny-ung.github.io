@@ -19,6 +19,12 @@
 ------------------------------------------------------------ */
 /* # Variable */
 /* # Layout */
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
 #global {
   display: none;
 }
@@ -55,6 +61,24 @@ footer {
 
 .container {
   height: 100%;
+}
+
+/* Animation */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* # Mixins */
@@ -405,7 +429,7 @@ header {
           transform: rotate(-90deg);
 }
 
-label {
+#btnBurger {
   z-index: 1;
   cursor: pointer;
   position: absolute;
@@ -575,7 +599,7 @@ label {
   height: 10vh;
 }
 
-#menu .divRight {
+#menu .divLeft {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -593,14 +617,14 @@ label {
   text-align: center;
 }
 
-#menu .divRight a {
+#menu .divLeft a {
   position: relative;
   text-decoration: none;
   color: #e6e6e6;
   padding: 1rem;
 }
 
-#menu .divRight span:first-child:before {
+#menu .divLeft span:first-child:before {
   content: '';
   position: absolute;
   top: 23px;
@@ -619,13 +643,13 @@ label {
   opacity: 0;
 }
 
-#menu .divRight a:hover span:first-child:before {
+#menu .divLeft a:hover span:first-child:before {
   top: unset;
   left: 8px;
   opacity: 1;
 }
 
-#menu .divRight span:first-child::after {
+#menu .divLeft span:first-child::after {
   content: '';
   position: absolute;
   top: 23px;
@@ -644,13 +668,13 @@ label {
   opacity: 0;
 }
 
-#menu .divRight a:hover span:first-child:after {
+#menu .divLeft a:hover span:first-child:after {
   top: unset;
   right: 8px;
   opacity: 1;
 }
 
-#menu .divRight span:last-child:before {
+#menu .divLeft span:last-child:before {
   content: '';
   position: absolute;
   top: 39px;
@@ -669,13 +693,13 @@ label {
   opacity: 0;
 }
 
-#menu .divRight a:hover span:last-child:before {
+#menu .divLeft a:hover span:last-child:before {
   top: 47px;
   left: 8px;
   opacity: 1;
 }
 
-#menu .divRight span:last-child::after {
+#menu .divLeft span:last-child::after {
   content: '';
   position: absolute;
   top: 39px;
@@ -694,7 +718,7 @@ label {
   opacity: 0;
 }
 
-#menu .divRight a:hover span:last-child:after {
+#menu .divLeft a:hover span:last-child:after {
   top: 47px;
   right: 8px;
   opacity: 1;
@@ -750,34 +774,34 @@ label {
         -ms-flex-align: center;
             align-items: center;
   }
-  #menu .divRight {
+  #menu .divLeft {
     font-size: 1rem;
     display: block;
     padding-left: 4rem;
   }
-  #menu .divRight span:first-child:before {
+  #menu .divLeft span:first-child:before {
     top: 14px;
   }
-  #menu .divRight span:first-child::after {
+  #menu .divLeft span:first-child::after {
     top: 14px;
   }
-  #menu .divRight span:last-child:before {
+  #menu .divLeft span:last-child:before {
     top: 30px;
   }
-  #menu .divRight a:hover span:last-child:before {
+  #menu .divLeft a:hover span:last-child:before {
     top: 34px;
   }
-  #menu .divRight span:last-child::after {
+  #menu .divLeft span:last-child::after {
     top: 30px;
   }
-  #menu .divRight a:hover span:last-child:after {
+  #menu .divLeft a:hover span:last-child:after {
     top: 34px;
   }
-  #menu .divLeft {
+  #menu .divRight {
     display: block;
     padding-right: 4rem;
   }
-  #menu .divLeft a {
+  #menu .divRight a {
     position: relative;
     text-decoration: none;
     color: #e6e6e6;
@@ -785,10 +809,10 @@ label {
     padding-left: 2rem;
     padding-right: 2rem;
   }
-  #menu .divLeft a:hover {
+  #menu .divRight a:hover {
     color: #dab40e;
   }
-  #menu .divLeft span:first-child:before {
+  #menu .divRight span:first-child:before {
     content: '';
     position: absolute;
     top: 14px;
@@ -806,12 +830,12 @@ label {
     transition: 0.2s;
     opacity: 0;
   }
-  #menu .divLeft a:hover span:first-child:before {
+  #menu .divRight a:hover span:first-child:before {
     top: unset;
     left: 8px;
     opacity: 1;
   }
-  #menu .divLeft span:first-child::after {
+  #menu .divRight span:first-child::after {
     content: '';
     position: absolute;
     top: 14px;
@@ -829,12 +853,12 @@ label {
     transition: 0.2s;
     opacity: 0;
   }
-  #menu .divLeft a:hover span:first-child:after {
+  #menu .divRight a:hover span:first-child:after {
     top: unset;
     right: 8px;
     opacity: 1;
   }
-  #menu .divLeft span:last-child:before {
+  #menu .divRight span:last-child:before {
     content: '';
     position: absolute;
     top: 30px;
@@ -852,12 +876,12 @@ label {
     transition: 0.2s;
     opacity: 0;
   }
-  #menu .divLeft a:hover span:last-child:before {
+  #menu .divRight a:hover span:last-child:before {
     top: 34px;
     left: 8px;
     opacity: 1;
   }
-  #menu .divLeft span:last-child::after {
+  #menu .divRight span:last-child::after {
     content: '';
     position: absolute;
     top: 30px;
@@ -875,7 +899,7 @@ label {
     transition: 0.2s;
     opacity: 0;
   }
-  #menu .divLeft a:hover span:last-child:after {
+  #menu .divRight a:hover span:last-child:after {
     top: 34px;
     right: 8px;
     opacity: 1;
@@ -943,7 +967,7 @@ label {
 }
 
 #home .row:nth-child(2) .info #name {
-  font-size: 4rem;
+  font-size: 3rem;
   color: #dab40e;
   font-weight: bold;
 }
@@ -990,6 +1014,9 @@ label {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+  }
+  #home .row:nth-child(2) .info #name {
+    font-size: 4rem;
   }
 }
 

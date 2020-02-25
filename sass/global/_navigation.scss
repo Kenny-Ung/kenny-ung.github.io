@@ -2,7 +2,7 @@ header {
     @include flex("", center, "");
 }
 
-#check {
+#check{
     display: none;
 }
 
@@ -24,7 +24,7 @@ header {
     }
 }
 
-label {
+#btnBurger {
     z-index: 1;
     cursor: pointer;
     position: absolute;
@@ -116,7 +116,7 @@ label {
     @include flex(column, space-between, center);
     height: 10vh;
 
-    .divRight {
+    .divLeft {
         @include flex(column, "", "");
         font-size: 1.50rem;
         text-align: center;
@@ -213,7 +213,7 @@ label {
     #menu {
         @include flex(row, space-between, center);
         
-        .divRight {
+        .divLeft {
             font-size: 1rem;
             display: block;
             padding-left: 4rem;
@@ -243,7 +243,7 @@ label {
             }
         }
 
-        .divLeft {
+        .divRight{
             display: block;
             padding-right: 4rem;
 

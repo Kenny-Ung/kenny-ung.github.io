@@ -31,28 +31,40 @@ function afficherProgressBar() {
                 
                 setTimeout(function(){ 
                     oPage[0].style.display = "none";
+                    oPagePrincipal.style.animation = "fadein 1.5s";
                     oPagePrincipal.style.display = "block";
                 }, 1000);
             }, 800);
-        } else {
-
+        } 
+        else {
             if(counter < 47) {
                 counter += 1;
-            }
-            
+            }  
             counterPercent += 2.12;
             progress += 2.13;
-
             oSmallPercent[0].style.display = "flex";
-
             oPercentLeft.style.paddingLeft = counter + "%";
             oPercentLeft.innerHTML = Math.floor(counterPercent) + "%";
-
             oPercentRight.style.paddingRight = counter + "%"; 
             oPercentRight.innerHTML = Math.floor(counterPercent) + "%";
-            
             oProgressBar[0].style.width = Math.floor(progress) + "%";
             oProgressBar[1].style.width = Math.floor(progress) + "%";
         }
     }  
+}
+
+/*
+ * Fonction: closeMenu
+ * Les barres de progressions augmentent et les pourcentages
+ * @param aucun
+ * @return aucun
+*/
+function aCloseMenu() {
+    var MenuMobile = document.querySelector(".menu-mobile");
+
+    MenuMobile.style.left = 0 + "%";
+    console.log("2")
+    setTimeout(function() {
+        MenuMobile.style.left = 100 + "%";
+    }, 500);
 }
