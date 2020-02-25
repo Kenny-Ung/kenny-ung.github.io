@@ -64,7 +64,5 @@ function aCloseMenu() {
 
     MenuMobile.style.left = 0 + "%";
     console.log("2")
-    setTimeout(function() {
-        MenuMobile.style.left = 100 + "%";
-    }, 500);
+    
 }

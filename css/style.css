@@ -50,13 +50,12 @@ header {
 section {
   width: 100vw;
   height: 100vh;
-  border-bottom: 1px solid #e6e6e6;
 }
 
 footer {
   background-color: #0c0c0c;
   width: 100vw;
-  height: 25vh;
+  height: 5vh;
 }
 
 .container {
@@ -747,7 +746,7 @@ header {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
   }
-  label {
+  #btnBurger {
     display: none;
   }
   .burger {
@@ -994,6 +993,14 @@ header {
   font-size: 2rem;
 }
 
+#home .row:nth-child(3) {
+  height: 25%;
+}
+
+#home .row:nth-child(3) .values {
+  background-color: #dab40e;
+}
+
 /*--------------------------------------------------------- TABLET --------------------------------------------------------- */
 @media screen and (min-width: 768px) {
   #home .row:nth-child(2) {
@@ -1021,7 +1028,179 @@ header {
 }
 
 /* # Portfolio */
+#portfolio .row:nth-child(1), #portfolio .row:nth-child(3) {
+  height: 15%;
+}
+
+#portfolio .row:nth-child(2) {
+  height: 70%;
+}
+
 /* # About */
+#about .row:nth-child(1) {
+  height: 25%;
+}
+
+#about .row:nth-child(2) {
+  height: 60%;
+  margin-right: unset;
+  margin-left: unset;
+}
+
+#about .row:nth-child(2) .about-me {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: "";
+      -ms-flex-pack: "";
+          justify-content: "";
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-right: 4rem;
+}
+
+#about .row:nth-child(2) .about-me h2 {
+  color: #dab40e;
+  font-weight: bold;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+}
+
+#about .row:nth-child(2) .about-me p {
+  padding-top: 2rem;
+  color: #e6e6e6;
+  text-align: justify;
+}
+
+#about .row:nth-child(2) .skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: "";
+      -ms-flex-pack: "";
+          justify-content: "";
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background-color: #dab40e;
+}
+
+#about .row:nth-child(2) .skills h2 {
+  font-weight: bold;
+  padding-top: 5rem;
+}
+
+#about .row:nth-child(2) .skills .title {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+#about .row:nth-child(2) .skills .skill {
+  padding-top: 0.50rem;
+}
+
+#about .row:nth-child(2) .skills .skill .progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 25rem;
+  height: 1.25rem;
+  font-size: .75rem;
+  background-color: #e6e6e6;
+  border-radius: .25rem;
+}
+
+#about .row:nth-child(2) .skills .skill .progress .progress-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: "";
+      -ms-flex-align: "";
+          align-items: "";
+  color: #e6e6e6;
+  background-color: #181818;
+  -webkit-transition: width .6s ease-in-out;
+  transition: width .6s ease-in-out;
+}
+
+#about .row:nth-child(2) .skills .skill .progress .pHtml {
+  width: 90%;
+}
+
+#about .row:nth-child(2) .skills .skill .progress .pHtml:hover {
+  -webkit-animation: barIncrease 2s ease-in-out forwards;
+          animation: barIncrease 2s ease-in-out forwards;
+}
+
+#about .row:nth-child(2) .skills .skill .progress .pCss {
+  width: 90%;
+}
+
+#about .row:nth-child(2) .skills .skill .progress .pCss:hover {
+  -webkit-animation: barIncrease 2s ease-in-out forwards;
+          animation: barIncrease 2s ease-in-out forwards;
+}
+
+#about .row:nth-child(2) .skills .skill .progress .pJs {
+  width: 80%;
+}
+
+#about .row:nth-child(2) .skills .skill .progress .pJs:hover {
+  -webkit-animation: barIncrease 2s ease-in-out forwards;
+          animation: barIncrease 2s ease-in-out forwards;
+}
+
+#about .row:nth-child(2) .skills .skill .progress .pPhp {
+  width: 60%;
+}
+
+#about .row:nth-child(2) .skills .skill .progress .pPhp:hover {
+  -webkit-animation: barIncrease 2s ease-in-out forwards;
+          animation: barIncrease 2s ease-in-out forwards;
+}
+
+/* Animations */
+@-webkit-keyframes barIncrease {
+  from {
+    width: 0%;
+  }
+  to {
+    width: initial;
+  }
+}
+@keyframes barIncrease {
+  from {
+    width: 0%;
+  }
+  to {
+    width: initial;
+  }
+}
+
+/*--------------------------------------------------------- TABLET --------------------------------------------------------- */
+@media screen and (min-width: 768px) {
+  #about .row:nth-child(2) {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+}
+
 /* # Contact */
 /* # Footer */
 /*# sourceMappingURL=style.css.map */

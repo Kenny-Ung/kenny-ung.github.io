@@ -1,5 +1,4 @@
 #home {
-    
     .row:nth-child(1) {
         height: 25%;
     }
@@ -57,6 +56,14 @@
             #description {
                 font-size: 2rem;
             }
+        }
+    }
+
+    .row:nth-child(3) {
+        height: 25%;
+
+        .values {
+            background-color: $yellow;
         }
     }
 }

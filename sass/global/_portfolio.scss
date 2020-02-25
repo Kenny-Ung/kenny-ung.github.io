@@ -1,0 +1,10 @@
+#portfolio {
+    .row:nth-child(1), .row:nth-child(3) {
+        height: 15%;
+    }
+
+    .row:nth-child(2) {
+        height: 70%;
+
+    }
+}
