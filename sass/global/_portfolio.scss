@@ -1,14 +1,46 @@
 #portfolio {
-    .row:nth-child(1), .row:nth-child(3) {
+    .row:nth-child(1), .row:nth-child(4) {
         height: 10%;
     }
 
+    .row:nth-child(3) {
+        //@include flex(row, center, flex-start);
+        height: 15%;
+
+        .btnSlider {
+            @include flex("", center, "");
+            
+            a {
+                width: 1.5rem;
+                height: 1.5rem;
+                background: $white;
+                text-decoration: none;
+                position: relative;
+                margin: auto 1rem;
+            }
+        }
+    }
+
     .row:nth-child(2) {
-        height: 80%;
+        height: 65%;
 
         .slider {
-            @include flex(column, center, center);
-            padding-top: 3rem;
+            @include flex("", center, center);
+            //padding-top: 3rem;
+            overflow: hidden;
+
+            .slides {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+                height: 70%;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
 
             .card {
                 @include flex(column, "", "");
@@ -18,6 +50,11 @@
                 position: relative;
                 background-color: unset;
                 border: unset;
+                margin: auto 1rem;
+
+                scroll-snap-align: start;
+                flex-shrink: 0;
+                transform-origin: center center;
 
                 .cardFront {
                     width: 100%;

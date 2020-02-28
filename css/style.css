@@ -1056,12 +1056,41 @@ header {
 }
 
 /* # Portfolio */
-#portfolio .row:nth-child(1), #portfolio .row:nth-child(3) {
+#portfolio .row:nth-child(1), #portfolio .row:nth-child(4) {
   height: 10%;
 }
 
+#portfolio .row:nth-child(3) {
+  height: 15%;
+}
+
+#portfolio .row:nth-child(3) .btnSlider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: "";
+          flex-direction: "";
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: "";
+      -ms-flex-align: "";
+          align-items: "";
+}
+
+#portfolio .row:nth-child(3) .btnSlider a {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #e6e6e6;
+  text-decoration: none;
+  position: relative;
+  margin: auto 1rem;
+}
+
 #portfolio .row:nth-child(2) {
-  height: 80%;
+  height: 65%;
 }
 
 #portfolio .row:nth-child(2) .slider {
@@ -1070,15 +1099,31 @@ header {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: "";
+          flex-direction: "";
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 3rem;
+  overflow: hidden;
+}
+
+#portfolio .row:nth-child(2) .slider .slides {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: auto;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  height: 70%;
+}
+
+#portfolio .row:nth-child(2) .slider .slides::-webkit-scrollbar {
+  display: none;
 }
 
 #portfolio .row:nth-child(2) .slider .card {
@@ -1101,6 +1146,12 @@ header {
   position: relative;
   background-color: unset;
   border: unset;
+  margin: auto 1rem;
+  scroll-snap-align: start;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
 }
 
 #portfolio .row:nth-child(2) .slider .card .cardFront {
