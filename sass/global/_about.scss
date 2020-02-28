@@ -19,8 +19,12 @@
                 padding-bottom: 2rem;
             }
 
-            p {
+            .greetings {
+                color: $white;
                 padding-top: 2rem;
+            }
+
+            .me {
                 color: $white;
                 text-align: justify;
             }
@@ -29,6 +33,7 @@
         .skills {
             @include flex(column, "", flex-end);
             background-color: $yellow;
+            height: 80%;
 
             h2 {
                 font-weight: bold;
@@ -42,6 +47,7 @@
 
             .skill {
                 padding-top: 0.50rem;
+                padding-right: 1rem;
 
                 .progress {
                     display: flex;

@@ -28,7 +28,7 @@
         .info {
             @include flex(column, center, center);
             color: $white;
-    
+
             #name {
                 font-size: 3rem;
                 color: $yellow;
