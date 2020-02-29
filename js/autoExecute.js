@@ -1,5 +1,9 @@
 "use strict";
 
+const oPageFirst = document.querySelectorAll("body"),
+    burger = document.querySelector(".burger"),
+    oBtnA = document.getElementsByClassName(".closeMenu");
+
 /*
  * Fonction exécutée lors du chargement de la page
  * @param aucun
@@ -7,19 +11,28 @@
  */
 
 (function () {
-
-    // Loading 
-    var oPageFirst = document.querySelectorAll("body");
+    // Loading
     for (let i = 0; i < oPageFirst.length; i++) {
-        oPageFirst[i].addEventListener("click", function() {
+        oPageFirst[i].addEventListener("click", () => {
             afficherProgressBar();
         }, {once: true});
     }
 
-    // var oBtnA = document.querySelectorAll(".closeMenu");
-    // for (let i = 0; i < oBtnA.length; i++) {
-    //     oBtnA[i].addEventListener("click", function() {
-    //         aCloseMenu();
-    //     });
-    // }
+    // Menu burger
+    var menu = document.getElementById("activeMenu");
+    burger.addEventListener("click", () => {
+        burger.classList.toggle("activeMenu");
+    });
+
+    if(menu == null) {
+        burger.addEventListener("click", openMenu);
+    } else if(menu != null) {
+        burger.addEventListener("click", closeMenu);
+    }
+
+    for (let i = 0; i < oBtnA.length; i++) {
+        oBtnA[i].addEventListener("click", () => {
+            closeMenu();
+        });
+    }
 })();

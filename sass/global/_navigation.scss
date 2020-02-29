@@ -2,36 +2,6 @@ header {
     @include flex("", center, "");
 }
 
-#check{
-    display: none;
-}
-
-#check:checked ~ .menu-mobile {
-    left: 0%;
-}
-
-#check:checked ~ #btnBurger {
-    .bars {
-        transform: rotate(45deg); 
-    }
-
-    .bars::before {
-        opacity: 0;
-    }
-
-    .bars::after {
-        transform: rotate(-90deg);
-    }
-}
-
-#btnBurger {
-    z-index: 1;
-    cursor: pointer;
-    position: absolute;
-    top: 40%;
-    left: 88%;  
-}
-
 .burger:hover {
     .border1::before {
         @include border(0px, "", -2px, "", 8px, 8px, 3px, "", 3px, "");
@@ -51,12 +21,17 @@ header {
 }
 
 .burger {
-    position: relative;
+    cursor: pointer;
+    position: absolute;
     @include flex("", center, center);
     width: 50px;
     height: 50px;
+    z-index: 1;
+    top: 1rem;
+    right: 1rem;
 
     .bars {
+        position: absolute;
         width: 30px;
         height: 5px;
         background-color: $white;
@@ -73,12 +48,24 @@ header {
     }
 
     .bars::before {
-        transform: translateY(-11px);
+        transform: translateY(-10px);
     }
 
     .bars::after {
-        transform: translateY(11px);
-    }
+        transform: translateY(10px);
+    }   
+}
+
+.activeMenu .bars {
+    background-color: transparent;
+}
+
+.activeMenu .bars::before {
+    transform: rotate(45deg);
+}
+
+.activeMenu .bars::after {
+    transform: rotate(-45deg);
 }
 
 .menu-mobile {
@@ -89,6 +76,26 @@ header {
     left: 100%;
     padding-top: 12rem;
     transition: all 0.5s ease-in-out;
+}
+
+@keyframes openMenu {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: 0%;
+    }
+}
+
+@keyframes closeMenu {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: 100%;
+    }
 }
 
 .logo {
@@ -116,7 +123,7 @@ header {
     @include flex(column, space-between, center);
     height: 10vh;
 
-    .divLeft {
+    .leftDiv {
         @include flex(column, "", "");
         font-size: 1.50rem;
         text-align: center;
@@ -181,7 +188,7 @@ header {
         }
     }
 
-    .divRight {
+    .rightDiv {
         padding-top: 5rem;
 
         .mobile {
@@ -234,7 +241,7 @@ header {
     #menu {
         @include flex(row, space-between, center);
         
-        .divLeft {
+        .leftDiv {
             font-size: 1rem;
             display: block;
             padding-left: 4rem;
@@ -264,7 +271,7 @@ header {
             }
         }
 
-        .divRight {
+        .rightDiv {
             display: block;
             padding-right: 4rem;
             padding-top: unset;

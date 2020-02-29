@@ -47,7 +47,7 @@
 
             .skill {
                 padding-top: 0.50rem;
-                padding-right: 1rem;
+                padding-right: 1.50rem;
 
                 .progress {
                     display: flex;
@@ -72,15 +72,15 @@
                         }
                     }
 
-                    .pCss {
-                        width: 90%;
+                    .pJs {
+                        width: 80%;
 
                         &:hover {
                             animation: barIncrease 2s ease-in-out forwards;
                         }
                     }
 
-                    .pJs {
+                    .pC {
                         width: 80%;
 
                         &:hover {

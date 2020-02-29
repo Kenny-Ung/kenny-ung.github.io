@@ -1,5 +1,15 @@
 "use strict";
 
+const oPagePrincipal = document.getElementById("global"),
+    oPage = document.getElementsByClassName("firstPage"),
+    oProgressBar = document.getElementsByClassName("progress-bar"),
+    oSmallPercent = document.getElementsByClassName("smallPercent"),
+    oPercentLeft = document.getElementById("percentLeft"),
+    oPercentRight = document.getElementById("percentRight"),
+    oPercentMax = document.getElementById("percentMax"),
+    oPercentTotal = document.getElementsByClassName("smallPercent"),
+    menu = document.querySelector(".menu-mobile");
+
 /*
  * Fonction: afficherProgressBar
  * Les barres de progressions augmentent et les pourcentages
@@ -7,14 +17,7 @@
  * @return aucun
 */
 function afficherProgressBar() {
-    var oPagePrincipal = document.getElementById("global");
-    var oPage = document.getElementsByClassName("firstPage");
-    var oProgressBar = document.getElementsByClassName("progress-bar");
-    var oSmallPercent = document.getElementsByClassName("smallPercent");
-    var oPercentLeft = document.getElementById("percentLeft");
-    var oPercentRight = document.getElementById("percentRight");
-    var oPercentMax = document.getElementById("percentMax");
-    var oPercentTotal = document.getElementsByClassName("smallPercent");
+     
     var counter = 0;
     var counterPercent = 0;
     var progress = 0;
@@ -26,10 +29,10 @@ function afficherProgressBar() {
             clearInterval(id);
             oPercentTotal[0].style.display = "none";
             
-            setTimeout(function(){ 
+            setTimeout(() => { 
                 oPage[0].style.animation = "fadeout 1.5s";
                 
-                setTimeout(function(){ 
+                setTimeout(() => { 
                     oPage[0].style.display = "none";
                     oPagePrincipal.style.animation = "fadein 1.5s";
                     oPagePrincipal.style.display = "block";
@@ -53,16 +56,22 @@ function afficherProgressBar() {
     }  
 }
 
-/*
- * Fonction: closeMenu
- * Les barres de progressions augmentent et les pourcentages
+/**
+ * Fonction: openMenu
+ * Ouvre le menu
  * @param aucun
  * @return aucun
-*/
-function aCloseMenu() {
-    var MenuMobile = document.querySelector(".menu-mobile");
+ */
+function openMenu() {
+    menu.style.animation = "openMenu 0.5s forwards";
+}
 
-    MenuMobile.style.left = 0 + "%";
-    console.log("2")
-    
+/**
+ * Fonction: closeMenu
+ * Ferme le menu
+ * @param aucun
+ * @return aucun
+ */
+function closeMenu() {
+    menu.style.animation = "closeMenu 0.5s forwards";
 }

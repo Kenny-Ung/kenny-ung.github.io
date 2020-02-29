@@ -406,36 +406,6 @@ header {
           align-items: "";
 }
 
-#check {
-  display: none;
-}
-
-#check:checked ~ .menu-mobile {
-  left: 0%;
-}
-
-#check:checked ~ #btnBurger .bars {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-#check:checked ~ #btnBurger .bars::before {
-  opacity: 0;
-}
-
-#check:checked ~ #btnBurger .bars::after {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-}
-
-#btnBurger {
-  z-index: 1;
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  left: 88%;
-}
-
 .burger:hover .border1::before {
   content: '';
   position: absolute;
@@ -501,7 +471,8 @@ header {
 }
 
 .burger {
-  position: relative;
+  cursor: pointer;
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -517,9 +488,13 @@ header {
           align-items: center;
   width: 50px;
   height: 50px;
+  z-index: 1;
+  top: 1rem;
+  right: 1rem;
 }
 
 .burger .bars {
+  position: absolute;
   width: 30px;
   height: 5px;
   background-color: #e6e6e6;
@@ -538,13 +513,27 @@ header {
 }
 
 .burger .bars::before {
-  -webkit-transform: translateY(-11px);
-          transform: translateY(-11px);
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .burger .bars::after {
-  -webkit-transform: translateY(11px);
-          transform: translateY(11px);
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+.activeMenu .bars {
+  background-color: transparent;
+}
+
+.activeMenu .bars::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.activeMenu .bars::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .menu-mobile {
@@ -556,6 +545,42 @@ header {
   padding-top: 12rem;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+}
+
+@-webkit-keyframes openMenu {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+@keyframes openMenu {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+@-webkit-keyframes closeMenu {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes closeMenu {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
 }
 
 .logo {
@@ -598,7 +623,7 @@ header {
   height: 10vh;
 }
 
-#menu .divLeft {
+#menu .leftDiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -616,18 +641,18 @@ header {
   text-align: center;
 }
 
-#menu .divLeft a {
+#menu .leftDiv a {
   position: relative;
   text-decoration: none;
   color: #e6e6e6;
   padding: 1rem;
 }
 
-#menu .divLeft a:hover {
+#menu .leftDiv a:hover {
   color: #dab40e;
 }
 
-#menu .divLeft span:first-child:before {
+#menu .leftDiv span:first-child:before {
   content: '';
   position: absolute;
   top: 23px;
@@ -646,13 +671,13 @@ header {
   opacity: 0;
 }
 
-#menu .divLeft a:hover span:first-child:before {
+#menu .leftDiv a:hover span:first-child:before {
   top: unset;
   left: 8px;
   opacity: 1;
 }
 
-#menu .divLeft span:first-child::after {
+#menu .leftDiv span:first-child::after {
   content: '';
   position: absolute;
   top: 23px;
@@ -671,13 +696,13 @@ header {
   opacity: 0;
 }
 
-#menu .divLeft a:hover span:first-child:after {
+#menu .leftDiv a:hover span:first-child:after {
   top: unset;
   right: 8px;
   opacity: 1;
 }
 
-#menu .divLeft span:last-child:before {
+#menu .leftDiv span:last-child:before {
   content: '';
   position: absolute;
   top: 39px;
@@ -696,13 +721,13 @@ header {
   opacity: 0;
 }
 
-#menu .divLeft a:hover span:last-child:before {
+#menu .leftDiv a:hover span:last-child:before {
   top: 47px;
   left: 8px;
   opacity: 1;
 }
 
-#menu .divLeft span:last-child::after {
+#menu .leftDiv span:last-child::after {
   content: '';
   position: absolute;
   top: 39px;
@@ -721,32 +746,32 @@ header {
   opacity: 0;
 }
 
-#menu .divLeft a:hover span:last-child:after {
+#menu .leftDiv a:hover span:last-child:after {
   top: 47px;
   right: 8px;
   opacity: 1;
 }
 
-#menu .divRight {
+#menu .rightDiv {
   padding-top: 5rem;
 }
 
-#menu .divRight .mobile {
+#menu .rightDiv .mobile {
   all: unset;
   text-decoration: none;
 }
 
-#menu .divRight .mobile .fab {
+#menu .rightDiv .mobile .fab {
   -webkit-transform: scale(4);
           transform: scale(4);
   margin: auto 2rem;
 }
 
-#menu .divRight .mobile .fab:hover {
+#menu .rightDiv .mobile .fab:hover {
   color: #dab40e;
 }
 
-#menu .divRight .desktop {
+#menu .rightDiv .desktop {
   display: none;
 }
 
@@ -796,38 +821,38 @@ header {
         -ms-flex-align: center;
             align-items: center;
   }
-  #menu .divLeft {
+  #menu .leftDiv {
     font-size: 1rem;
     display: block;
     padding-left: 4rem;
   }
-  #menu .divLeft span:first-child:before {
+  #menu .leftDiv span:first-child:before {
     top: 14px;
   }
-  #menu .divLeft span:first-child::after {
+  #menu .leftDiv span:first-child::after {
     top: 14px;
   }
-  #menu .divLeft span:last-child:before {
+  #menu .leftDiv span:last-child:before {
     top: 30px;
   }
-  #menu .divLeft a:hover span:last-child:before {
+  #menu .leftDiv a:hover span:last-child:before {
     top: 34px;
   }
-  #menu .divLeft span:last-child::after {
+  #menu .leftDiv span:last-child::after {
     top: 30px;
   }
-  #menu .divLeft a:hover span:last-child:after {
+  #menu .leftDiv a:hover span:last-child:after {
     top: 34px;
   }
-  #menu .divRight {
+  #menu .rightDiv {
     display: block;
     padding-right: 4rem;
     padding-top: unset;
   }
-  #menu .divRight .mobile {
+  #menu .rightDiv .mobile {
     display: none;
   }
-  #menu .divRight .desktop {
+  #menu .rightDiv .desktop {
     display: inline-block;
     position: relative;
     text-decoration: none;
@@ -836,10 +861,10 @@ header {
     padding-left: 2rem;
     padding-right: 2rem;
   }
-  #menu .divRight .desktop:hover {
+  #menu .rightDiv .desktop:hover {
     color: #dab40e;
   }
-  #menu .divRight span:first-child:before {
+  #menu .rightDiv span:first-child:before {
     content: '';
     position: absolute;
     top: 14px;
@@ -857,12 +882,12 @@ header {
     transition: 0.2s;
     opacity: 0;
   }
-  #menu .divRight .desktop:hover span:first-child:before {
+  #menu .rightDiv .desktop:hover span:first-child:before {
     top: unset;
     left: 8px;
     opacity: 1;
   }
-  #menu .divRight span:first-child::after {
+  #menu .rightDiv span:first-child::after {
     content: '';
     position: absolute;
     top: 14px;
@@ -880,12 +905,12 @@ header {
     transition: 0.2s;
     opacity: 0;
   }
-  #menu .divRight .desktop:hover span:first-child:after {
+  #menu .rightDiv .desktop:hover span:first-child:after {
     top: unset;
     right: 8px;
     opacity: 1;
   }
-  #menu .divRight span:last-child:before {
+  #menu .rightDiv span:last-child:before {
     content: '';
     position: absolute;
     top: 30px;
@@ -903,12 +928,12 @@ header {
     transition: 0.2s;
     opacity: 0;
   }
-  #menu .divRight .desktop:hover span:last-child:before {
+  #menu .rightDiv .desktop:hover span:last-child:before {
     top: 34px;
     left: 8px;
     opacity: 1;
   }
-  #menu .divRight span:last-child::after {
+  #menu .rightDiv span:last-child::after {
     content: '';
     position: absolute;
     top: 30px;
@@ -926,7 +951,7 @@ header {
     transition: 0.2s;
     opacity: 0;
   }
-  #menu .divRight .desktop:hover span:last-child:after {
+  #menu .rightDiv .desktop:hover span:last-child:after {
     top: 34px;
     right: 8px;
     opacity: 1;
@@ -1056,77 +1081,48 @@ header {
 }
 
 /* # Portfolio */
-#portfolio .row:nth-child(1), #portfolio .row:nth-child(4) {
+#portfolio .row:nth-child(1), #portfolio .row:nth-child(3) {
   height: 10%;
 }
 
-#portfolio .row:nth-child(3) {
-  height: 15%;
+#portfolio .row:nth-child(2) {
+  height: 80%;
+  overflow-y: hidden;
 }
 
-#portfolio .row:nth-child(3) .btnSlider {
+#portfolio .row:nth-child(2) .deck {
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  overflow-y: auto;
+}
+
+#portfolio .row:nth-child(2) .deck .cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: "";
-          flex-direction: "";
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: "";
       -ms-flex-align: "";
           align-items: "";
-}
-
-#portfolio .row:nth-child(3) .btnSlider a {
-  width: 1.5rem;
-  height: 1.5rem;
-  background: #e6e6e6;
-  text-decoration: none;
-  position: relative;
-  margin: auto 1rem;
-}
-
-#portfolio .row:nth-child(2) {
-  height: 65%;
-}
-
-#portfolio .row:nth-child(2) .slider {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: "";
-          flex-direction: "";
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  overflow: hidden;
-}
-
-#portfolio .row:nth-child(2) .slider .slides {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  overflow-x: auto;
-  -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow-y: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  height: 70%;
+  height: 100%;
 }
 
-#portfolio .row:nth-child(2) .slider .slides::-webkit-scrollbar {
+#portfolio .row:nth-child(2) .deck .cards::-webkit-scrollbar {
   display: none;
 }
 
-#portfolio .row:nth-child(2) .slider .card {
+#portfolio .row:nth-child(2) .deck .card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1146,15 +1142,11 @@ header {
   position: relative;
   background-color: unset;
   border: unset;
-  margin: auto 1rem;
+  margin: 0 1rem 4rem 1rem;
   scroll-snap-align: start;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  -webkit-transform-origin: center center;
-          transform-origin: center center;
 }
 
-#portfolio .row:nth-child(2) .slider .card .cardFront {
+#portfolio .row:nth-child(2) .deck .card .cardFront {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -1169,11 +1161,11 @@ header {
   transition: transform 0.5s linear, -webkit-transform 0.5s linear;
 }
 
-#portfolio .row:nth-child(2) .slider .card .cardFront img {
+#portfolio .row:nth-child(2) .deck .card .cardFront img {
   height: 100%;
 }
 
-#portfolio .row:nth-child(2) .slider .card .cardBack {
+#portfolio .row:nth-child(2) .deck .card .cardBack {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1203,21 +1195,21 @@ header {
   transition: transform 0.5s linear, -webkit-transform 0.5s linear;
 }
 
-#portfolio .row:nth-child(2) .slider .card .cardBack h5 {
+#portfolio .row:nth-child(2) .deck .card .cardBack h5 {
   font-weight: bold;
 }
 
-#portfolio .row:nth-child(2) .slider .card .cardBack .card-text {
+#portfolio .row:nth-child(2) .deck .card .cardBack .card-text {
   color: #e6e6e6;
   margin: 1rem;
 }
 
-#portfolio .row:nth-child(2) .slider .card:hover .cardFront {
+#portfolio .row:nth-child(2) .deck .card:hover .cardFront {
   -webkit-transform: perspective(600px) rotateY(-180deg);
           transform: perspective(600px) rotateY(-180deg);
 }
 
-#portfolio .row:nth-child(2) .slider .card:hover .cardBack {
+#portfolio .row:nth-child(2) .deck .card:hover .cardBack {
   -webkit-transform: perspective(600px) rotateY(0deg);
           transform: perspective(600px) rotateY(0deg);
 }
@@ -1297,7 +1289,7 @@ header {
 
 #about .row:nth-child(2) .skills .skill {
   padding-top: 0.50rem;
-  padding-right: 1rem;
+  padding-right: 1.50rem;
 }
 
 #about .row:nth-child(2) .skills .skill .progress {
@@ -1340,20 +1332,20 @@ header {
           animation: barIncrease 2s ease-in-out forwards;
 }
 
-#about .row:nth-child(2) .skills .skill .progress .pCss {
-  width: 90%;
-}
-
-#about .row:nth-child(2) .skills .skill .progress .pCss:hover {
-  -webkit-animation: barIncrease 2s ease-in-out forwards;
-          animation: barIncrease 2s ease-in-out forwards;
-}
-
 #about .row:nth-child(2) .skills .skill .progress .pJs {
   width: 80%;
 }
 
 #about .row:nth-child(2) .skills .skill .progress .pJs:hover {
+  -webkit-animation: barIncrease 2s ease-in-out forwards;
+          animation: barIncrease 2s ease-in-out forwards;
+}
+
+#about .row:nth-child(2) .skills .skill .progress .pC {
+  width: 80%;
+}
+
+#about .row:nth-child(2) .skills .skill .progress .pC:hover {
   -webkit-animation: barIncrease 2s ease-in-out forwards;
           animation: barIncrease 2s ease-in-out forwards;
 }
