@@ -103,6 +103,7 @@ header {
     cursor: pointer;
     width: 60px;
     position: absolute;
+    transform: translateX(-50%);
     top: 25%;
     left: 3%;
     transition: all 0.2s ease-in-out;

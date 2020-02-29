@@ -44,7 +44,8 @@ header {
   height: 10vh;
   position: fixed;
   z-index: 1;
-  background-color: #181818;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #181818), to(#ffffff00));
+  background-image: linear-gradient(#181818 20%, #ffffff00 100%);
 }
 
 section {
@@ -588,6 +589,8 @@ header {
   cursor: pointer;
   width: 60px;
   position: absolute;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   top: 25%;
   left: 3%;
   -webkit-transition: all 0.2s ease-in-out;
@@ -1047,11 +1050,123 @@ header {
 }
 
 #home .row:nth-child(3) {
-  height: 25%;
+  height: 16%;
+  margin-bottom: 1rem;
 }
 
 #home .row:nth-child(3) .values {
   background-color: #dab40e;
+}
+
+#home .row:nth-child(4) {
+  height: 7%;
+}
+
+#home .row:nth-child(4) .scrollContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#home .row:nth-child(4) .scrollContainer #scroll {
+  cursor: pointer;
+  position: relative;
+}
+
+#home .row:nth-child(4) .scrollContainer #scroll .arrow {
+  position: absolute;
+  width: 30px;
+  height: 8px;
+  opacity: 0;
+  -webkit-transform: scale3d(0.5, 0.5, 0.5);
+          transform: scale3d(0.5, 0.5, 0.5);
+  -webkit-animation: scroll 3s ease-out infinite;
+          animation: scroll 3s ease-out infinite;
+}
+
+#home .row:nth-child(4) .scrollContainer #scroll .arrow:first-child {
+  -webkit-animation: scroll 3s ease-out 1s infinite;
+          animation: scroll 3s ease-out 1s infinite;
+}
+
+#home .row:nth-child(4) .scrollContainer #scroll .arrow:nth-child(2) {
+  -webkit-animation: scroll 3s ease-out 2s infinite;
+          animation: scroll 3s ease-out 2s infinite;
+}
+
+#home .row:nth-child(4) .scrollContainer #scroll .arrow:before, #home .row:nth-child(4) .scrollContainer #scroll .arrow:after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 51%;
+  background: #e6e6e6;
+}
+
+#home .row:nth-child(4) .scrollContainer #scroll .arrow:before {
+  left: 0;
+  -webkit-transform: skew(0deg, 30deg);
+          transform: skew(0deg, 30deg);
+}
+
+#home .row:nth-child(4) .scrollContainer #scroll .arrow:after {
+  right: 0;
+  width: 50%;
+  background: #dab40e;
+  -webkit-transform: skew(0deg, -30deg);
+          transform: skew(0deg, -30deg);
+}
+
+/* Animations */
+@-webkit-keyframes scroll {
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+            transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+@keyframes scroll {
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+            transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
 }
 
 /*--------------------------------------------------------- TABLET --------------------------------------------------------- */

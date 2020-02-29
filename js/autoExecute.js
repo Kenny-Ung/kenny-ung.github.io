@@ -2,7 +2,8 @@
 
 const oPageFirst = document.querySelectorAll("body"),
     burger = document.querySelector(".burger"),
-    oBtnA = document.getElementsByClassName(".closeMenu");
+    oBtnA = document.getElementsByClassName(".closeMenu"),
+    scroll = document.getElementById("scroll");
 
 /*
  * Fonction exécutée lors du chargement de la page
@@ -17,6 +18,11 @@ const oPageFirst = document.querySelectorAll("body"),
             afficherProgressBar();
         }, {once: true});
     }
+
+    // Scroll indicator
+    scroll.addEventListener("click", () => {
+        location.hash = "#portfolio";
+    });
 
     // Menu burger
     var menu = document.getElementById("activeMenu");
