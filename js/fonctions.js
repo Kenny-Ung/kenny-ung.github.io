@@ -1,13 +1,13 @@
 "use strict";
 
 const oPagePrincipal = document.getElementById("global"),
-    oPage = document.getElementsByClassName("firstPage"),
+    oPage = document.querySelector(".firstPage"),
     oProgressBar = document.getElementsByClassName("progress-bar"),
-    oSmallPercent = document.getElementsByClassName("smallPercent"),
+    oSmallPercent = document.querySelector(".smallPercent"),
     oPercentLeft = document.getElementById("percentLeft"),
     oPercentRight = document.getElementById("percentRight"),
     oPercentMax = document.getElementById("percentMax"),
-    oPercentTotal = document.getElementsByClassName("smallPercent"),
+    oPercentTotal = document.querySelector(".smallPercent"),
     menu = document.querySelector(".menu-mobile");
 
 /*
@@ -27,13 +27,13 @@ function afficherProgressBar() {
         if(counter == 47) {
             oPercentMax.style.display = "block";
             clearInterval(id);
-            oPercentTotal[0].style.display = "none";
+            oPercentTotal.style.display = "none";
             
             setTimeout(() => { 
-                oPage[0].style.animation = "fadeout 1.5s";
+                oPage.style.animation = "fadeout 1.5s";
                 
                 setTimeout(() => { 
-                    oPage[0].style.display = "none";
+                    oPage.style.display = "none";
                     oPagePrincipal.style.animation = "fadein 1.5s";
                     oPagePrincipal.style.display = "block";
                 }, 1000);
@@ -45,7 +45,7 @@ function afficherProgressBar() {
             }  
             counterPercent += 2.12;
             progress += 2.13;
-            oSmallPercent[0].style.display = "flex";
+            oSmallPercent.style.display = "flex";
             oPercentLeft.style.paddingLeft = counter + "%";
             oPercentLeft.innerHTML = Math.floor(counterPercent) + "%";
             oPercentRight.style.paddingRight = counter + "%"; 
@@ -74,4 +74,47 @@ function openMenu() {
  */
 function closeMenu() {
     menu.style.animation = "closeMenu 0.5s forwards";
+}
+
+/**
+ * Fonction: scrollAnim
+ * ----------------------
+ * @param aucun
+ * @return aucun
+ */
+function scrollAnim() {
+    const heightSection = window.innerHeight,
+        oSkills = document.querySelector(".skills"),
+        opHtml = document.querySelector(".pHtml"),
+        opJs = document.querySelector(".pJs"),
+        opC = document.querySelector(".pC"),
+        opPhp = document.querySelector(".pPhp");
+
+
+    //Page Home
+    if (window.pageYOffset <= heightSection) {
+
+    }
+
+    //Page Portfolio
+    if (window.pageYOffset == heightSection * 1) {
+
+    }
+
+    //Page About
+    if (window.pageYOffset == heightSection * 2) {
+        oSkills.style.animation = "appear .8s ease-in-out forwards";
+        opHtml.innerHTML = "90" + "%";
+        opHtml.style.animation = "barIncrease1 .8s .8s ease-in-out forwards";
+        opJs.innerHTML = "80" + "%";
+        opJs.style.animation = "barIncrease2 .8s .8s ease-in-out forwards";
+        opC.innerHTML = "80" + "%";
+        opC.style.animation = "barIncrease3 .8s .8s ease-in-out forwards";
+        opPhp.innerHTML = "60" + "%";
+        opPhp.style.animation = "barIncrease4 .8s .8s ease-in-out forwards";
+    }
+
+    //Page Contact
+    if (window.pageYOffset == heightSection * 3) {
+    }
 }

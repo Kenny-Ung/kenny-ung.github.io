@@ -1085,8 +1085,8 @@ header {
 
 #home .row:nth-child(4) .scrollContainer #scroll .arrow {
   position: absolute;
-  width: 30px;
-  height: 8px;
+  width: 50px;
+  height: 10px;
   opacity: 0;
   -webkit-transform: scale3d(0.5, 0.5, 0.5);
           transform: scale3d(0.5, 0.5, 0.5);
@@ -1201,14 +1201,20 @@ header {
 }
 
 #portfolio .row:nth-child(2) {
+  padding-top: 1rem;
   height: 80%;
-  overflow-y: hidden;
-}
-
-#portfolio .row:nth-child(2) .deck {
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
   overflow-y: auto;
+}
+
+#portfolio .row:nth-child(2)::-webkit-scrollbar {
+  display: none;
+}
+
+#portfolio .row:nth-child(2) .deck {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 #portfolio .row:nth-child(2) .deck .cards {
@@ -1228,13 +1234,7 @@ header {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   overflow-y: auto;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
   height: 100%;
-}
-
-#portfolio .row:nth-child(2) .deck .cards::-webkit-scrollbar {
-  display: none;
 }
 
 #portfolio .row:nth-child(2) .deck .card {
@@ -1390,6 +1390,7 @@ header {
           align-items: flex-end;
   background-color: #dab40e;
   height: 80%;
+  left: 100%;
 }
 
 #about .row:nth-child(2) .skills h2 {
@@ -1416,6 +1417,8 @@ header {
   font-size: .75rem;
   background-color: #e6e6e6;
   border-radius: .25rem;
+  -webkit-box-shadow: 0px 0px 10px 0px #181818;
+          box-shadow: 0px 0px 10px 0px #181818;
 }
 
 #about .row:nth-child(2) .skills .skill .progress .progress-bar {
@@ -1434,47 +1437,99 @@ header {
           align-items: "";
   color: #e6e6e6;
   background-color: #181818;
-  -webkit-transition: width .6s ease-in-out;
-  transition: width .6s ease-in-out;
-}
-
-#about .row:nth-child(2) .skills .skill .progress .pHtml {
-  width: 90%;
-}
-
-#about .row:nth-child(2) .skills .skill .progress .pHtml:hover {
-  -webkit-animation: barIncrease 2s ease-in-out forwards;
-          animation: barIncrease 2s ease-in-out forwards;
-}
-
-#about .row:nth-child(2) .skills .skill .progress .pJs {
-  width: 80%;
-}
-
-#about .row:nth-child(2) .skills .skill .progress .pJs:hover {
-  -webkit-animation: barIncrease 2s ease-in-out forwards;
-          animation: barIncrease 2s ease-in-out forwards;
-}
-
-#about .row:nth-child(2) .skills .skill .progress .pC {
-  width: 80%;
-}
-
-#about .row:nth-child(2) .skills .skill .progress .pC:hover {
-  -webkit-animation: barIncrease 2s ease-in-out forwards;
-          animation: barIncrease 2s ease-in-out forwards;
-}
-
-#about .row:nth-child(2) .skills .skill .progress .pPhp {
-  width: 60%;
-}
-
-#about .row:nth-child(2) .skills .skill .progress .pPhp:hover {
-  -webkit-animation: barIncrease 2s ease-in-out forwards;
-          animation: barIncrease 2s ease-in-out forwards;
+  border-radius: .25rem;
 }
 
 /* Animations */
+@-webkit-keyframes appear {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+@keyframes appear {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+@-webkit-keyframes barIncrease1 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 90%;
+  }
+}
+
+@keyframes barIncrease1 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 90%;
+  }
+}
+
+@-webkit-keyframes barIncrease2 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+@keyframes barIncrease2 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+@-webkit-keyframes barIncrease3 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+@keyframes barIncrease3 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+@-webkit-keyframes barIncrease4 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 60%;
+  }
+}
+
+@keyframes barIncrease4 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 60%;
+  }
+}
+
 /*--------------------------------------------------------- TABLET --------------------------------------------------------- */
 @media screen and (min-width: 768px) {
   #about .row:nth-child(2) {

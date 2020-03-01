@@ -24,6 +24,9 @@ const oPageFirst = document.querySelectorAll("body"),
         location.hash = "#portfolio";
     });
 
+    // Scroll page animation
+    window.addEventListener("scroll", scrollAnim);
+
     // Menu burger
     var menu = document.getElementById("activeMenu");
     burger.addEventListener("click", () => {

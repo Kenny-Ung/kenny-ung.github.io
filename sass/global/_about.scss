@@ -34,6 +34,7 @@
             @include flex(column, "", flex-end);
             background-color: $yellow;
             height: 80%;
+            left: 100%;
 
             h2 {
                 font-weight: bold;
@@ -56,44 +57,13 @@
                     font-size: .75rem;
                     background-color: $white;
                     border-radius: .25rem;
+                    box-shadow: 0px 0px 10px 0px rgba(24,24,24,1);
 
                     .progress-bar {
                         @include flex(column, center, "");
                         color: $white;
                         background-color: rgb(24, 24, 24);
-                        transition: width .6s ease-in-out;
-                    }
-
-                    .pHtml {
-                        width: 90%;
-
-                        &:hover {
-                            animation: barIncrease 2s ease-in-out forwards;
-                        }
-                    }
-
-                    .pJs {
-                        width: 80%;
-
-                        &:hover {
-                            animation: barIncrease 2s ease-in-out forwards;
-                        }
-                    }
-
-                    .pC {
-                        width: 80%;
-
-                        &:hover {
-                            animation: barIncrease 2s ease-in-out forwards;
-                        }
-                    }
-
-                    .pPhp {
-                        width: 60%;
-
-                        &:hover {
-                            animation: barIncrease 2s ease-in-out forwards;
-                        }
+                        border-radius: .25rem;
                     }
                 }
             }
@@ -102,15 +72,55 @@
 }
 
 /* Animations */
-// @keyframes barIncrease {
-//     from {
-//         width: 0%;
-//     }
+@keyframes appear {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: 0%;
+    }
+}
+
+@keyframes barIncrease1 {
+    from {
+        width: 0%;
+    }
     
-//     to {
-//         width: initial;
-//     }
-// }
+    to {
+        width: 90%;
+    }
+}
+
+@keyframes barIncrease2 {
+    from {
+        width: 0%;
+    }
+    
+    to {
+        width: 80%;
+    }
+}
+
+@keyframes barIncrease3 {
+    from {
+        width: 0%;
+    }
+    
+    to {
+        width: 80%;
+    }
+}
+
+@keyframes barIncrease4 {
+    from {
+        width: 0%;
+    }
+    
+    to {
+        width: 60%;
+    }
+}
 
 /*--------------------------------------------------------- TABLET --------------------------------------------------------- */  
 @media screen and (min-width: 768px) { 
