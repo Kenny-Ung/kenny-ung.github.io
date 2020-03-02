@@ -22,6 +22,8 @@
                 flex-wrap: wrap;
                 overflow-y: auto;
                 height: 100%;
+                padding-top: 3rem;
+                padding-left: 3rem;
             }
 
             .card {
@@ -43,6 +45,7 @@
                     position: absolute;
                     transform: perspective(600px) rotateY(0deg);
                     transition: transform 0.5s linear;
+                    background-color: green;
 
                     img {
                         height: 100%;
@@ -80,5 +83,18 @@
                 transform: perspective(600px) rotateY(0deg);
             }
         }
+    }
+}
+
+/*--------------------------------------------------------- TABLET --------------------------------------------------------- */  
+@media screen and (min-width: 768px) { 
+    #portfolio {
+        .row:nth-child(2) {
+            .deck {
+                .cards {
+                    padding-left: unset;
+                }
+            }
+        } 
     }
 }

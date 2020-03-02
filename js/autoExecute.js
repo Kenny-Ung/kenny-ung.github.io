@@ -2,7 +2,7 @@
 
 const oPageFirst = document.querySelectorAll("body"),
     burger = document.querySelector(".burger"),
-    oBtnA = document.getElementsByClassName(".closeMenu"),
+    oBtnA = document.getElementsByClassName("closeMenu"),
     scroll = document.getElementById("scroll");
 
 /*
@@ -24,24 +24,27 @@ const oPageFirst = document.querySelectorAll("body"),
         location.hash = "#portfolio";
     });
 
-    // Scroll page animation
-    window.addEventListener("scroll", scrollAnim);
-
     // Menu burger
-    var menu = document.getElementById("activeMenu");
+    var menu = document.getElementsByClassName(".activeMenu");
     burger.addEventListener("click", () => {
         burger.classList.toggle("activeMenu");
     });
 
-    if(menu == null) {
+    if(menu !== null) {
         burger.addEventListener("click", openMenu);
-    } else if(menu != null) {
-        burger.addEventListener("click", closeMenu);
     }
+    // if(menu !== null) {
+    //     burger.addEventListener("click", closeMenu);
+    // }
 
+    // Menu nav burger
     for (let i = 0; i < oBtnA.length; i++) {
         oBtnA[i].addEventListener("click", () => {
             closeMenu();
+            console.log("2")
         });
     }
+
+    // Scroll page animation
+    window.addEventListener("scroll", scrollAnim);
 })();

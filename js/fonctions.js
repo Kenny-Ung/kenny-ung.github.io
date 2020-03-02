@@ -8,7 +8,8 @@ const oPagePrincipal = document.getElementById("global"),
     oPercentRight = document.getElementById("percentRight"),
     oPercentMax = document.getElementById("percentMax"),
     oPercentTotal = document.querySelector(".smallPercent"),
-    menu = document.querySelector(".menu-mobile");
+    menuMobile = document.querySelector(".menu-mobile"),
+    bars = document.querySelector(".activeMenu");
 
 /*
  * Fonction: afficherProgressBar
@@ -63,7 +64,7 @@ function afficherProgressBar() {
  * @return aucun
  */
 function openMenu() {
-    menu.style.animation = "openMenu 0.5s forwards";
+    menuMobile.style.animation = "openMenu 0.5s forwards";
 }
 
 /**
@@ -73,7 +74,8 @@ function openMenu() {
  * @return aucun
  */
 function closeMenu() {
-    menu.style.animation = "closeMenu 0.5s forwards";
+    //bars.removeAttribute("animation");
+    menuMobile.style.animation = "closeMenu 0.5s forwards";
 }
 
 /**
@@ -97,24 +99,28 @@ function scrollAnim() {
     }
 
     //Page Portfolio
-    if (window.pageYOffset == heightSection * 1) {
+    if (window.pageYOffset == heightSection * 0.75) {
 
     }
 
     //Page About
     if (window.pageYOffset == heightSection * 2) {
         oSkills.style.animation = "appear .8s ease-in-out forwards";
-        opHtml.innerHTML = "90" + "%";
         opHtml.style.animation = "barIncrease1 .8s .8s ease-in-out forwards";
-        opJs.innerHTML = "80" + "%";
         opJs.style.animation = "barIncrease2 .8s .8s ease-in-out forwards";
-        opC.innerHTML = "80" + "%";
         opC.style.animation = "barIncrease3 .8s .8s ease-in-out forwards";
-        opPhp.innerHTML = "60" + "%";
         opPhp.style.animation = "barIncrease4 .8s .8s ease-in-out forwards";
+
+        setTimeout(() => {
+            opHtml.innerHTML = "90" + "%";
+            opJs.innerHTML = "80" + "%";
+            opC.innerHTML = "80" + "%";
+            opPhp.innerHTML = "60" + "%";
+        }, 1300);
     }
 
     //Page Contact
     if (window.pageYOffset == heightSection * 3) {
+
     }
 }
