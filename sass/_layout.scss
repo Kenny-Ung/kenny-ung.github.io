@@ -29,7 +29,6 @@ header {
 section {
     width: 100vw;
     height: 100vh;
-    //border-bottom: 1px solid $white;
 }
 
 footer {
@@ -40,15 +39,4 @@ footer {
 
 .container {
     height: 100%;
-}
-
-/* Animation */
-@keyframes fadein {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
 }

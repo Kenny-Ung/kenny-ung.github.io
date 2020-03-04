@@ -1,0 +1,149 @@
+// Open burger
+@keyframes openMenu {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: 0%;
+    }
+}
+
+// Close burger
+@keyframes closeMenu {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+// Scroll indicator
+@keyframes scroll {
+    25% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+
+    67% {
+        opacity: 1;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+}
+
+// Fade out
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+// Fade in
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// Cube rotation
+@keyframes rotateCube {
+    from {
+		transform: rotateX(0deg) rotateY(0deg);
+    }
+
+	to { 
+		transform: rotateX(360deg) rotateY(360deg);
+	}
+}
+
+// Up
+@keyframes up {
+    from {
+        top: 100%;
+    }
+
+    to {
+        top: 0%;
+    }
+}
+
+// Appear by right
+@keyframes appearRight {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: 0%;
+    }
+}
+
+// Skill1 value 
+@keyframes barIncrease1 {
+    from {
+        width: 0%;
+    }
+    
+    to {
+        width: 90%;
+    }
+}
+
+// Skill2 value 
+@keyframes barIncrease2 {
+    from {
+        width: 0%;
+    }
+    
+    to {
+        width: 80%;
+    }
+}
+
+// Skill3 value 
+@keyframes barIncrease3 {
+    from {
+        width: 0%;
+    }
+    
+    to {
+        width: 80%;
+    }
+}
+
+// Skill4 value 
+@keyframes barIncrease4 {
+    from {
+        width: 0%;
+    }
+    
+    to {
+        width: 60%;
+    }
+}
+
+// Skill circle value 
+@keyframes circleIncrease {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+}

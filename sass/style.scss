@@ -6,6 +6,7 @@
 # INDEX
 -------------------------------------------------------------
 # Variable
+# Animations
 # Layout
 # Mixins
 # FirstPage
@@ -21,11 +22,14 @@
 /* # Variable */
 @import "_variable.scss";
 
-/* # Layout */
-@import "_layout.scss";
+/* # Animations */
+@import "_animations.scss";
 
 /* # Mixins */
 @import "_mixins.scss";
+
+/* # Layout */
+@import "_layout.scss";
 
 /* # FirstPage */
 @import "_firstPage.scss";

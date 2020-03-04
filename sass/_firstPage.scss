@@ -108,27 +108,6 @@
     }
 }
 
-/* Animation */
-@keyframes fadeout {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-@keyframes rotateCube {
-    from {
-		transform: rotateX(0deg) rotateY(0deg);
-    }
-
-	to { 
-		transform: rotateX(360deg) rotateY(360deg);
-	}
-}
-
 @keyframes scaleCube {
     from {
         transform: scale(1.1);
@@ -181,17 +160,17 @@
     
     @keyframes scaleCube {
         from {
-            transform: scale(0.9);
+            transform: scale(1);
             opacity: 1;
         }
     
         50% {
-            transform: scale(0.5);
+            transform: scale(0.8);
             opacity: 0.4;
         }
     
         to { 
-            transform: scale(0.9);
+            transform: scale(1);
             opacity: 1;
         }
     }

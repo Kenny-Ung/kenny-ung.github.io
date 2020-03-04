@@ -86,6 +86,7 @@ function closeMenu() {
  */
 function scrollAnim() {
     const heightSection = window.innerHeight,
+        oCard = document.getElementsByClassName("card"),
         oSkills = document.querySelector(".skills"),
         opHtml = document.querySelector(".pHtml"),
         opJs = document.querySelector(".pJs"),
@@ -94,22 +95,28 @@ function scrollAnim() {
 
 
     //Page Home
-    if (window.pageYOffset <= heightSection) {
-
+    if (window.pageYOffset == heightSection) {
+        
     }
 
     //Page Portfolio
-    if (window.pageYOffset == heightSection * 0.75) {
-
+    if (window.pageYOffset >= heightSection * 0.75) {
+        let i = 0;
+        setInterval( () => {
+            if (i < oCard.length) {
+                oCard[i].style.animation = "up .7s ease-in-out forwards";
+                i++;
+            }
+        }, 250);
     }
 
     //Page About
-    if (window.pageYOffset == heightSection * 2) {
-        oSkills.style.animation = "appear .8s ease-in-out forwards";
-        opHtml.style.animation = "barIncrease1 .8s .8s ease-in-out forwards";
-        opJs.style.animation = "barIncrease2 .8s .8s ease-in-out forwards";
-        opC.style.animation = "barIncrease3 .8s .8s ease-in-out forwards";
-        opPhp.style.animation = "barIncrease4 .8s .8s ease-in-out forwards";
+    if (window.pageYOffset >= heightSection * 1.75) {
+        oSkills.style.animation = "appearRight .7s ease-in-out forwards";
+        opHtml.style.animation = "barIncrease1 .7s .7s ease-in-out forwards";
+        opJs.style.animation = "barIncrease2 .7s .7s ease-in-out forwards";
+        opC.style.animation = "barIncrease3 .7s .7s ease-in-out forwards";
+        opPhp.style.animation = "barIncrease4 .7s .7s ease-in-out forwards";
 
         setTimeout(() => {
             opHtml.innerHTML = "90" + "%";
@@ -120,7 +127,7 @@ function scrollAnim() {
     }
 
     //Page Contact
-    if (window.pageYOffset == heightSection * 3) {
+    if (window.pageYOffset >= heightSection * 2.75) {
 
     }
 }

@@ -100,7 +100,7 @@
                     stroke-width: 2.8;
                     stroke-linecap: round;
                     stroke-dasharray: 80;
-                    animation: progress 1s ease-out forwards;
+                    animation: circleIncrease 1s ease-out forwards;
                 }
 
                 .number {
@@ -130,63 +130,6 @@
         }
     }
 }
-
-/* Animations */
-@keyframes appear {
-    from {
-        left: 100%;
-    }
-
-    to {
-        left: 0%;
-    }
-}
-
-@keyframes barIncrease1 {
-    from {
-        width: 0%;
-    }
-    
-    to {
-        width: 90%;
-    }
-}
-
-@keyframes barIncrease2 {
-    from {
-        width: 0%;
-    }
-    
-    to {
-        width: 80%;
-    }
-}
-
-@keyframes barIncrease3 {
-    from {
-        width: 0%;
-    }
-    
-    to {
-        width: 80%;
-    }
-}
-
-@keyframes barIncrease4 {
-    from {
-        width: 0%;
-    }
-    
-    to {
-        width: 60%;
-    }
-}
-
-@keyframes progress {
-    0% {
-      stroke-dasharray: 0 100;
-    }
-  }
 
 /*--------------------------------------------------------- TABLET --------------------------------------------------------- */  
 @media screen and (min-width: 768px) { 

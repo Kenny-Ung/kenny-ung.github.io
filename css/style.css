@@ -6,6 +6,7 @@
 # INDEX
 -------------------------------------------------------------
 # Variable
+# Animations
 # Layout
 # Mixins
 # FirstPage
@@ -18,6 +19,263 @@
     # Footer
 ------------------------------------------------------------ */
 /* # Variable */
+/* # Animations */
+@-webkit-keyframes openMenu {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+@keyframes openMenu {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+@-webkit-keyframes closeMenu {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes closeMenu {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes scroll {
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+            transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+@keyframes scroll {
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+            transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes rotateCube {
+  from {
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+            transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(360deg) rotateY(360deg);
+            transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+@keyframes rotateCube {
+  from {
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+            transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(360deg) rotateY(360deg);
+            transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes up {
+  from {
+    top: 100%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
+@keyframes up {
+  from {
+    top: 100%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
+@-webkit-keyframes appearRight {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+@keyframes appearRight {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+@-webkit-keyframes barIncrease1 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 90%;
+  }
+}
+
+@keyframes barIncrease1 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 90%;
+  }
+}
+
+@-webkit-keyframes barIncrease2 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+@keyframes barIncrease2 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+@-webkit-keyframes barIncrease3 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+@keyframes barIncrease3 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+@-webkit-keyframes barIncrease4 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 60%;
+  }
+}
+
+@keyframes barIncrease4 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 60%;
+  }
+}
+
+@-webkit-keyframes circleIncrease {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+@keyframes circleIncrease {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+/* # Mixins */
 /* # Layout */
 html {
   overflow-x: hidden;
@@ -63,25 +321,6 @@ footer {
   height: 100%;
 }
 
-/* Animation */
-@-webkit-keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* # Mixins */
 /* # FirstPage */
 #particles-js {
   position: absolute;
@@ -248,46 +487,6 @@ footer {
           transform: translateX(-100px) rotateX(90deg);
 }
 
-/* Animation */
-@-webkit-keyframes fadeout {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes fadeout {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes rotateCube {
-  from {
-    -webkit-transform: rotateX(0deg) rotateY(0deg);
-            transform: rotateX(0deg) rotateY(0deg);
-  }
-  to {
-    -webkit-transform: rotateX(360deg) rotateY(360deg);
-            transform: rotateX(360deg) rotateY(360deg);
-  }
-}
-
-@keyframes rotateCube {
-  from {
-    -webkit-transform: rotateX(0deg) rotateY(0deg);
-            transform: rotateX(0deg) rotateY(0deg);
-  }
-  to {
-    -webkit-transform: rotateX(360deg) rotateY(360deg);
-            transform: rotateX(360deg) rotateY(360deg);
-  }
-}
-
 @-webkit-keyframes scaleCube {
   from {
     -webkit-transform: scale(1.1);
@@ -356,35 +555,35 @@ footer {
   }
   @-webkit-keyframes scaleCube {
     from {
-      -webkit-transform: scale(0.9);
-              transform: scale(0.9);
+      -webkit-transform: scale(1);
+              transform: scale(1);
       opacity: 1;
     }
     50% {
-      -webkit-transform: scale(0.5);
-              transform: scale(0.5);
+      -webkit-transform: scale(0.8);
+              transform: scale(0.8);
       opacity: 0.4;
     }
     to {
-      -webkit-transform: scale(0.9);
-              transform: scale(0.9);
+      -webkit-transform: scale(1);
+              transform: scale(1);
       opacity: 1;
     }
   }
   @keyframes scaleCube {
     from {
-      -webkit-transform: scale(0.9);
-              transform: scale(0.9);
+      -webkit-transform: scale(1);
+              transform: scale(1);
       opacity: 1;
     }
     50% {
-      -webkit-transform: scale(0.5);
-              transform: scale(0.5);
+      -webkit-transform: scale(0.8);
+              transform: scale(0.8);
       opacity: 0.4;
     }
     to {
-      -webkit-transform: scale(0.9);
-              transform: scale(0.9);
+      -webkit-transform: scale(1);
+              transform: scale(1);
       opacity: 1;
     }
   }
@@ -546,42 +745,6 @@ header {
   padding-top: 12rem;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-}
-
-@-webkit-keyframes openMenu {
-  from {
-    left: 100%;
-  }
-  to {
-    left: 0%;
-  }
-}
-
-@keyframes openMenu {
-  from {
-    left: 100%;
-  }
-  to {
-    left: 0%;
-  }
-}
-
-@-webkit-keyframes closeMenu {
-  from {
-    left: 0%;
-  }
-  to {
-    left: 100%;
-  }
-}
-
-@keyframes closeMenu {
-  from {
-    left: 0%;
-  }
-  to {
-    left: 100%;
-  }
 }
 
 .logo {
@@ -1025,6 +1188,15 @@ header {
   font-size: 3rem;
   color: #dab40e;
   font-weight: bold;
+  opacity: 0;
+  -webkit-animation: fadein 0.7s .5s ease-in-out forwards;
+          animation: fadein 0.7s .5s ease-in-out forwards;
+}
+
+#home .row:nth-child(2) .info #profil span {
+  opacity: 0;
+  -webkit-animation: fadein 0.7s 1.5s ease-in-out forwards;
+          animation: fadein 0.7s 1.5s ease-in-out forwards;
 }
 
 #home .row:nth-child(2) .info #profil::before {
@@ -1034,6 +1206,9 @@ header {
   left: -5px;
   top: 10px;
   color: #dab40e;
+  opacity: 0;
+  -webkit-animation: fadein 0.7s 1s ease-in-out forwards;
+          animation: fadein 0.7s 1s ease-in-out forwards;
 }
 
 #home .row:nth-child(2) .info #profil::after {
@@ -1043,6 +1218,9 @@ header {
   left: 10px;
   top: 34px;
   color: #dab40e;
+  opacity: 0;
+  -webkit-animation: fadein 1s 1s ease-in-out forwards;
+          animation: fadein 1s 1s ease-in-out forwards;
 }
 
 #home .row:nth-child(2) .info #description {
@@ -1126,48 +1304,6 @@ header {
           transform: skew(0deg, -30deg);
 }
 
-/* Animations */
-@-webkit-keyframes scroll {
-  25% {
-    opacity: 1;
-  }
-  33% {
-    opacity: 1;
-    -webkit-transform: translateY(30px);
-            transform: translateY(30px);
-  }
-  67% {
-    opacity: 1;
-    -webkit-transform: translateY(40px);
-            transform: translateY(40px);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
-            transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
-  }
-}
-@keyframes scroll {
-  25% {
-    opacity: 1;
-  }
-  33% {
-    opacity: 1;
-    -webkit-transform: translateY(30px);
-            transform: translateY(30px);
-  }
-  67% {
-    opacity: 1;
-    -webkit-transform: translateY(40px);
-            transform: translateY(40px);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
-            transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
-  }
-}
-
 /*--------------------------------------------------------- TABLET --------------------------------------------------------- */
 @media screen and (min-width: 768px) {
   #home .row:nth-child(2) {
@@ -1236,6 +1372,7 @@ header {
   height: 100%;
   padding-top: 3rem;
   padding-left: 3rem;
+  overflow: hidden;
 }
 
 #portfolio .row:nth-child(2) .deck .card {
@@ -1260,6 +1397,8 @@ header {
   border: unset;
   margin: 0 1rem 4rem 1rem;
   scroll-snap-align: start;
+  position: relative;
+  top: 100%;
 }
 
 #portfolio .row:nth-child(2) .deck .card .cardFront {
@@ -1495,8 +1634,8 @@ header {
   stroke-width: 2.8;
   stroke-linecap: round;
   stroke-dasharray: 80;
-  -webkit-animation: progress 1s ease-out forwards;
-          animation: progress 1s ease-out forwards;
+  -webkit-animation: circleIncrease 1s ease-out forwards;
+          animation: circleIncrease 1s ease-out forwards;
 }
 
 #about .row:nth-child(3) .box .chart .number {
@@ -1533,108 +1672,6 @@ header {
   font-size: 1rem;
   text-align: center;
   color: #e6e6e6;
-}
-
-/* Animations */
-@-webkit-keyframes appear {
-  from {
-    left: 100%;
-  }
-  to {
-    left: 0%;
-  }
-}
-@keyframes appear {
-  from {
-    left: 100%;
-  }
-  to {
-    left: 0%;
-  }
-}
-
-@-webkit-keyframes barIncrease1 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 90%;
-  }
-}
-
-@keyframes barIncrease1 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 90%;
-  }
-}
-
-@-webkit-keyframes barIncrease2 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 80%;
-  }
-}
-
-@keyframes barIncrease2 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 80%;
-  }
-}
-
-@-webkit-keyframes barIncrease3 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 80%;
-  }
-}
-
-@keyframes barIncrease3 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 80%;
-  }
-}
-
-@-webkit-keyframes barIncrease4 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 60%;
-  }
-}
-
-@keyframes barIncrease4 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 60%;
-  }
-}
-
-@-webkit-keyframes progress {
-  0% {
-    stroke-dasharray: 0 100;
-  }
-}
-
-@keyframes progress {
-  0% {
-    stroke-dasharray: 0 100;
-  }
 }
 
 /*--------------------------------------------------------- TABLET --------------------------------------------------------- */

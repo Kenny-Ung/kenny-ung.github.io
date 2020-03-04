@@ -24,6 +24,7 @@
                 height: 100%;
                 padding-top: 3rem;
                 padding-left: 3rem;
+                overflow: hidden;
             }
 
             .card {
@@ -36,6 +37,8 @@
                 border: unset;
                 margin: 0 1rem 4rem 1rem;
                 scroll-snap-align: start;
+                position: relative;
+                top: 100%; 
 
                 .cardFront {
                     width: 100%;
@@ -45,7 +48,7 @@
                     position: absolute;
                     transform: perspective(600px) rotateY(0deg);
                     transition: transform 0.5s linear;
-                    background-color: green;
+                    background-color: green; 
 
                     img {
                         height: 100%;
