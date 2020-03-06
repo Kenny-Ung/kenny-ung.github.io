@@ -18,12 +18,11 @@
             -webkit-overflow-scrolling: touch;
 
             .cards {
-                @include flex(row, space-between, "");
+                @include flex(row, space-around, "");
                 flex-wrap: wrap;
                 overflow-y: auto;
                 height: 100%;
                 padding-top: 3rem;
-                padding-left: 3rem;
                 overflow: hidden;
             }
 

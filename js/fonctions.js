@@ -91,8 +91,9 @@ function scrollAnim() {
         opHtml = document.querySelector(".pHtml"),
         opJs = document.querySelector(".pJs"),
         opC = document.querySelector(".pC"),
-        opPhp = document.querySelector(".pPhp");
-
+        opPhp = document.querySelector(".pPhp"),
+        oBox = document.getElementsByClassName("box"),
+        oCircle2 = document.getElementsByClassName("circle2");
 
     //Page Home
     if (window.pageYOffset == heightSection) {
@@ -124,6 +125,22 @@ function scrollAnim() {
             opC.innerHTML = "80" + "%";
             opPhp.innerHTML = "60" + "%";
         }, 1300);
+
+        setTimeout(() => {
+            let i = 0;
+            setInterval( () => {
+                if (i < oBox.length) {
+                    oBox[i].style.animation = "up2 1s ease-in-out forwards";
+                    i++;
+                }
+            }, 250);
+        }, 1500);
+
+        setTimeout(() => {
+            oCircle2[0].style.animation = "circleIncrease 1s ease forwards";
+            oCircle2[1].style.animation = "circleIncrease 1s ease forwards";
+            oCircle2[2].style.animation = "circleIncrease 1s ease forwards";
+        }, 2500);
     }
 
     //Page Contact

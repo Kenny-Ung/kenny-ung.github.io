@@ -173,6 +173,24 @@
   }
 }
 
+@-webkit-keyframes up2 {
+  from {
+    top: 100%;
+  }
+  to {
+    top: -10%;
+  }
+}
+
+@keyframes up2 {
+  from {
+    top: 100%;
+  }
+  to {
+    top: -10%;
+  }
+}
+
 @-webkit-keyframes appearRight {
   from {
     left: 100%;
@@ -756,8 +774,8 @@ header {
           transform: translateX(-50%);
   top: 25%;
   left: 3%;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .logo .st1 {
@@ -1125,6 +1143,42 @@ header {
 }
 
 /* # Home */
+#home .panelContainer {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 55rem;
+  top: 30rem;
+}
+
+#home .panelContainer .panel {
+  width: 100%;
+  height: 100%;
+  background: #e6e6e6;
+  -webkit-transform: perspective(600px) rotateY(-35deg);
+          transform: perspective(600px) rotateY(-35deg);
+}
+
+#home .panelContainer .panel:hover {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+#home .panelContainer:nth-child(2) {
+  left: 66rem;
+  top: 16rem;
+}
+
+#home .panelContainer:nth-child(2) .panel {
+  background: #dab40e;
+  -webkit-transform: perspective(600px) rotateY(35deg);
+          transform: perspective(600px) rotateY(35deg);
+}
+
+#home .panelContainer:nth-child(3) {
+  top: 2rem;
+}
+
 #home .row:nth-child(1) {
   height: 25%;
 }
@@ -1225,21 +1279,16 @@ header {
 
 #home .row:nth-child(2) .info #description {
   font-size: 2rem;
+  opacity: 0;
+  -webkit-animation: fadein .8s 2s ease-in-out forwards;
+          animation: fadein .8s 2s ease-in-out forwards;
 }
 
 #home .row:nth-child(3) {
-  height: 16%;
+  height: 25%;
 }
 
-#home .row:nth-child(3) .values {
-  background-color: #dab40e;
-}
-
-#home .row:nth-child(4) {
-  height: 7%;
-}
-
-#home .row:nth-child(4) .scrollContainer {
+#home .row:nth-child(3) .scrollContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1247,20 +1296,23 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-#home .row:nth-child(4) .scrollContainer #scroll {
+#home .row:nth-child(3) .scrollContainer #scroll {
   cursor: pointer;
   position: relative;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  left: -2%;
 }
 
-#home .row:nth-child(4) .scrollContainer #scroll .arrow {
+#home .row:nth-child(3) .scrollContainer #scroll .arrow {
   position: absolute;
   width: 50px;
   height: 10px;
@@ -1271,17 +1323,17 @@ header {
           animation: scroll 3s ease-out infinite;
 }
 
-#home .row:nth-child(4) .scrollContainer #scroll .arrow:first-child {
+#home .row:nth-child(3) .scrollContainer #scroll .arrow:first-child {
   -webkit-animation: scroll 3s ease-out 1s infinite;
           animation: scroll 3s ease-out 1s infinite;
 }
 
-#home .row:nth-child(4) .scrollContainer #scroll .arrow:nth-child(2) {
+#home .row:nth-child(3) .scrollContainer #scroll .arrow:nth-child(2) {
   -webkit-animation: scroll 3s ease-out 2s infinite;
           animation: scroll 3s ease-out 2s infinite;
 }
 
-#home .row:nth-child(4) .scrollContainer #scroll .arrow:before, #home .row:nth-child(4) .scrollContainer #scroll .arrow:after {
+#home .row:nth-child(3) .scrollContainer #scroll .arrow:before, #home .row:nth-child(3) .scrollContainer #scroll .arrow:after {
   content: ' ';
   position: absolute;
   top: 0;
@@ -1290,13 +1342,13 @@ header {
   background: #e6e6e6;
 }
 
-#home .row:nth-child(4) .scrollContainer #scroll .arrow:before {
+#home .row:nth-child(3) .scrollContainer #scroll .arrow:before {
   left: 0;
   -webkit-transform: skew(0deg, 30deg);
           transform: skew(0deg, 30deg);
 }
 
-#home .row:nth-child(4) .scrollContainer #scroll .arrow:after {
+#home .row:nth-child(3) .scrollContainer #scroll .arrow:after {
   right: 0;
   width: 50%;
   background: #dab40e;
@@ -1360,9 +1412,8 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: "";
       -ms-flex-align: "";
           align-items: "";
@@ -1371,7 +1422,6 @@ header {
   overflow-y: auto;
   height: 100%;
   padding-top: 3rem;
-  padding-left: 3rem;
   overflow: hidden;
 }
 
@@ -1592,7 +1642,22 @@ header {
   height: 25%;
 }
 
-#about .row:nth-child(3) .box {
+#about .row:nth-child(3) .skills2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: "";
+          flex-direction: "";
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: "";
+      -ms-flex-align: "";
+          align-items: "";
+}
+
+#about .row:nth-child(3) .skills2 .box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1612,15 +1677,18 @@ header {
   background-color: #202020;
   -webkit-box-shadow: 0px 0px 10px 0px #181818;
           box-shadow: 0px 0px 10px 0px #181818;
+  bottom: 10%;
+  top: 100%;
 }
 
-#about .row:nth-child(3) .box .chart {
+#about .row:nth-child(3) .skills2 .box .chart {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 125px;
+  height: 125px;
+  bottom: 0.5rem;
 }
 
-#about .row:nth-child(3) .box .chart .circle1 {
+#about .row:nth-child(3) .skills2 .box .chart .circle1 {
   stroke: #181818;
   fill: none;
   stroke-width: 2.8;
@@ -1628,17 +1696,15 @@ header {
   stroke-dasharray: 100;
 }
 
-#about .row:nth-child(3) .box .chart .circle2 {
+#about .row:nth-child(3) .skills2 .box .chart .circle2 {
   stroke: #dab40e;
   fill: none;
   stroke-width: 2.8;
   stroke-linecap: round;
   stroke-dasharray: 80;
-  -webkit-animation: circleIncrease 1s ease-out forwards;
-          animation: circleIncrease 1s ease-out forwards;
 }
 
-#about .row:nth-child(3) .box .chart .number {
+#about .row:nth-child(3) .skills2 .box .chart .number {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1660,18 +1726,22 @@ header {
   color: #e6e6e6;
 }
 
-#about .row:nth-child(3) .box .chart .number h2 {
+#about .row:nth-child(3) .skills2 .box .chart .number h2 {
   font-size: 2rem;
 }
 
-#about .row:nth-child(3) .box .chart .number h2 span {
+#about .row:nth-child(3) .skills2 .box .chart .number h2 span {
   font-size: 1rem;
 }
 
-#about .row:nth-child(3) .box .chart .title {
+#about .row:nth-child(3) .skills2 .box .chart .title {
   font-size: 1rem;
   text-align: center;
   color: #e6e6e6;
+}
+
+#about .row:nth-child(3) .skills2 .box:nth-child(2) .chart .circle2, #about .row:nth-child(3) .skills2 .box:nth-child(3) .chart .circle2 {
+  stroke-dasharray: 70;
 }
 
 /*--------------------------------------------------------- TABLET --------------------------------------------------------- */
