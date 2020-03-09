@@ -155,6 +155,24 @@
   }
 }
 
+@-webkit-keyframes lineIncrease {
+  from {
+    width: 0rem;
+  }
+  to {
+    width: 10rem;
+  }
+}
+
+@keyframes lineIncrease {
+  from {
+    width: 0rem;
+  }
+  to {
+    width: 10rem;
+  }
+}
+
 @-webkit-keyframes up {
   from {
     top: 100%;
@@ -175,18 +193,22 @@
 
 @-webkit-keyframes up2 {
   from {
+    opacity: 0;
     top: 100%;
   }
   to {
+    opacity: 1;
     top: -10%;
   }
 }
 
 @keyframes up2 {
   from {
+    opacity: 0;
     top: 100%;
   }
   to {
+    opacity: 1;
     top: -10%;
   }
 }
@@ -1404,6 +1426,19 @@ header {
   -webkit-overflow-scrolling: touch;
 }
 
+#portfolio .row:nth-child(2) .deck h1 {
+  opacity: 0;
+  color: #dab40e;
+}
+
+#portfolio .row:nth-child(2) .deck .line {
+  height: 3px;
+  width: 0rem;
+  background-color: #e6e6e6;
+  border-radius: 0.1rem;
+  display: block;
+}
+
 #portfolio .row:nth-child(2) .deck .cards {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1679,6 +1714,7 @@ header {
           box-shadow: 0px 0px 10px 0px #181818;
   bottom: 10%;
   top: 100%;
+  opacity: 0;
 }
 
 #about .row:nth-child(3) .skills2 .box .chart {

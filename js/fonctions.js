@@ -86,6 +86,8 @@ function closeMenu() {
  */
 function scrollAnim() {
     const heightSection = window.innerHeight,
+        oH1Portfolio = document.querySelector("h1"),
+        oLine = document.querySelector(".line"),
         oCard = document.getElementsByClassName("card"),
         oSkills = document.querySelector(".skills"),
         opHtml = document.querySelector(".pHtml"),
@@ -102,6 +104,9 @@ function scrollAnim() {
 
     //Page Portfolio
     if (window.pageYOffset >= heightSection * 0.75) {
+        oH1Portfolio.style.animation = "fadein 0.7s ease-in-out forwards"
+        oLine.style.animation = "lineIncrease 0.7s 1s ease-in-out forwards"
+
         let i = 0;
         setInterval( () => {
             if (i < oCard.length) {
@@ -140,7 +145,7 @@ function scrollAnim() {
             oCircle2[0].style.animation = "circleIncrease 1s ease forwards";
             oCircle2[1].style.animation = "circleIncrease 1s ease forwards";
             oCircle2[2].style.animation = "circleIncrease 1s ease forwards";
-        }, 2500);
+        }, 2200);
     }
 
     //Page Contact
