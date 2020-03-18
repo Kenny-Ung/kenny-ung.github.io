@@ -1,0 +1,6 @@
+.credits {
+    @include flex(row, center, center);
+    margin-top: 9px;
+    color: $white;
+    font-size: 0.75rem;
+}

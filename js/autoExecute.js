@@ -41,7 +41,7 @@ const oPageFirst = document.querySelectorAll("body"),
     for (let i = 0; i < oBtnA.length; i++) {
         oBtnA[i].addEventListener("click", () => {
             closeMenu();
-            console.log("2")
+            //console.log("2")
         });
     }
 
