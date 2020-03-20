@@ -1564,7 +1564,7 @@ header {
 
 /* # About */
 #about .row:nth-child(1) {
-  height: 15%;
+  height: 3%;
 }
 
 #about .row:nth-child(2) {
@@ -1587,7 +1587,7 @@ header {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding-right: 4rem;
+  padding-bottom: 3rem;
 }
 
 #about .row:nth-child(2) .about-me h2 {
@@ -1645,7 +1645,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 25rem;
+  width: 19.5rem;
   height: 1.25rem;
   font-size: .75rem;
   background-color: #e6e6e6;
@@ -1690,6 +1690,8 @@ header {
   -webkit-box-align: "";
       -ms-flex-align: "";
           align-items: "";
+  position: relative;
+  top: 15rem;
 }
 
 #about .row:nth-child(3) .skills2 .box {
@@ -1707,11 +1709,11 @@ header {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  width: 15rem;
+  width: 7rem;
   height: 100%;
   background-color: #202020;
-  -webkit-box-shadow: 0px 0px 10px 0px #181818;
-          box-shadow: 0px 0px 10px 0px #181818;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(24, 24, 24, 0.3);
+          box-shadow: 0px 0px 10px 0px rgba(24, 24, 24, 0.3);
   bottom: 10%;
   top: 100%;
   opacity: 0;
@@ -1719,8 +1721,8 @@ header {
 
 #about .row:nth-child(3) .skills2 .box .chart {
   position: relative;
-  width: 125px;
-  height: 125px;
+  width: 100px;
+  height: 100px;
   bottom: 0.5rem;
 }
 
@@ -1763,7 +1765,7 @@ header {
 }
 
 #about .row:nth-child(3) .skills2 .box .chart .number h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 #about .row:nth-child(3) .skills2 .box .chart .number h2 span {
@@ -1782,9 +1784,39 @@ header {
 
 /*--------------------------------------------------------- TABLET --------------------------------------------------------- */
 @media screen and (min-width: 768px) {
+  #about .row:nth-child(1) {
+    height: 15%;
+  }
   #about .row:nth-child(2) {
     margin-right: -15px;
     margin-left: -15px;
+  }
+  #about .row:nth-child(2) .about-me {
+    padding-right: 4rem;
+  }
+  #about .row:nth-child(2) .skills .skill .progress {
+    width: 23.5rem;
+  }
+  #about .row:nth-child(3) .skills2 {
+    position: unset;
+    top: unset;
+  }
+  #about .row:nth-child(3) .skills2 .box {
+    width: 15rem;
+  }
+  #about .row:nth-child(3) .skills2 .box .chart {
+    width: 125px;
+    height: 125px;
+  }
+  #about .row:nth-child(3) .skills2 .box .chart .number h2 {
+    font-size: 2rem;
+  }
+}
+
+/*--------------------------------------------------------- Computer --------------------------------------------------------- */
+@media screen and (min-width: 1440px) {
+  #about .row:nth-child(2) .skills .skill .progress {
+    width: 29.5rem;
   }
 }
 
