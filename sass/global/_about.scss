@@ -149,6 +149,30 @@
     }
 }
 
+@media screen and (min-width: 576px) { 
+    #about {
+        .row:nth-child(2) {
+            .skills {
+                .skill {
+                    .progress {
+                        width: 26.5rem;
+                    }
+                }
+            }
+        }
+        
+        .row:nth-child(3) {
+            .skills2 {
+                top: 19rem;
+
+                .box {
+                    width: 8rem;
+                }
+            }
+        }
+    }
+}
+
 /*--------------------------------------------------------- TABLET --------------------------------------------------------- */  
 @media screen and (min-width: 768px) { 
     #about {
@@ -198,6 +222,21 @@
 }
 
 /*--------------------------------------------------------- Computer --------------------------------------------------------- */ 
+@media screen and (min-width: 1024px) { 
+    #about {
+        .row:nth-child(2) {
+            .skills {
+                .skill {
+                    .progress {
+                        width: 27.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*--------------------------------------------------------- Computer xl --------------------------------------------------------- */ 
 @media screen and (min-width: 1440px) { 
     #about {
         .row:nth-child(2) {

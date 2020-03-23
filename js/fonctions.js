@@ -74,7 +74,6 @@ function openMenu() {
  * @return aucun
  */
 function closeMenu() {
-    //bars.removeAttribute("animation");
     menuMobile.style.animation = "closeMenu 0.5s forwards";
 }
 

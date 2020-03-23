@@ -2,8 +2,10 @@
 
 const oPageFirst = document.querySelectorAll("body"),
     burger = document.querySelector(".burger"),
+    burgerClose = document.querySelector(".burgerClose"),
     oBtnA = document.getElementsByClassName("closeMenu"),
-    scroll = document.getElementById("scroll");
+    scroll = document.getElementById("scroll"),
+    scrollMe = document.getElementById("scrollMe");
 
 /*
  * Fonction exécutée lors du chargement de la page
@@ -24,18 +26,13 @@ const oPageFirst = document.querySelectorAll("body"),
         location.hash = "#portfolio";
     });
 
-    // Menu burger
-    var menu = document.getElementsByClassName(".activeMenu");
-    burger.addEventListener("click", () => {
-        burger.classList.toggle("activeMenu");
+    scroll.addEventListener("mouseover", () => {
+        scrollMe.style.animation = "fadein 1s ease-in-out forwards";
     });
-
-    if(menu !== null) {
-        burger.addEventListener("click", openMenu);
-    }
-    // if(menu !== null) {
-    //     burger.addEventListener("click", closeMenu);
-    // }
+    
+    //Burger and burgerClose
+    burger.addEventListener("click", openMenu);
+    burgerClose.addEventListener("click", closeMenu);
 
     // Menu nav burger
     for (let i = 0; i < oBtnA.length; i++) {

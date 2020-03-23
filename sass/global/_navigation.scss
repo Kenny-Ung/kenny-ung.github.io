@@ -2,7 +2,7 @@ header {
     @include flex("", center, "");
 }
 
-.burger:hover {
+.burger:hover, .burgerClose:hover {
     .border1::before {
         @include border(0px, "", -2px, "", 8px, 8px, 3px, "", 3px, "");
     }
@@ -12,11 +12,11 @@ header {
     }
 
     .border2::before {
-        @include border(40px, "", -2px, "", 8px, 8px, "", 3px, 3px, "");
+        @include border(42px, "", -2px, "", 8px, 8px, "", 3px, 3px, "");
     }
 
     .border2::after {
-        @include border(40px, "", "", -2px, 8px, 8px, "", 3px, "", 3px);
+        @include border(42px, "", "", -2px, 8px, 8px, "", 3px, "", 3px);
     }
 }
 
@@ -26,7 +26,6 @@ header {
     @include flex("", center, center);
     width: 50px;
     height: 50px;
-    z-index: 1;
     top: 1rem;
     right: 1rem;
 
@@ -56,16 +55,50 @@ header {
     }   
 }
 
-.activeMenu .bars {
-    background-color: transparent;
+.burgerClose:hover {
+    .bars2::before {
+        @include border(0px, "", -2px, "", 8px, 8px, 3px, "", 3px, "");
+    }
+
+    .bars2::after {
+        @include border(0px, "", "", -2px, 8px, 8px, 3px, "", "", 3px);
+    }
+
+    .bars3::before {
+        @include border(42px, "", -2px, "", 8px, 8px, "", 3px, 3px, "");
+    }
+
+    .bars3::after {
+        @include border(42px, "", "", -2px, 8px, 8px, "", 3px, "", 3px);
+    }
 }
 
-.activeMenu .bars::before {
-    transform: rotate(45deg);
-}
+.burgerClose {
+    cursor: pointer;
+    position: absolute;
+    @include flex("", center, center);
+    width: 50px;
+    height: 50px;
+    top: 1rem;
+    left: 1rem;
 
-.activeMenu .bars::after {
-    transform: rotate(-45deg);
+    .border3 {
+        display: inline-block;
+        position: absolute;
+        transform: rotate(45deg);
+        width: 35px;
+        height: 6px;
+        background-color: $white;
+    }
+    
+    .border4 {
+        display: inline-block;
+        position: absolute;
+        transform: rotate(-45deg);
+        width: 35px;
+        height: 6px;
+        background-color: $white;
+    }
 }
 
 .menu-mobile {
@@ -79,13 +112,12 @@ header {
 }
 
 .logo {
-    z-index: 1;
     cursor: pointer;
     width: 60px;
     position: absolute;
     transform: translateX(-50%);
-    top: 25%;
-    left: 3%;
+    top: 1rem;
+    left: 3rem;
     transition: all 0.2s ease;
 
     .st1 {
@@ -208,6 +240,10 @@ header {
     }
 
     .burger {
+        display: none;
+    }
+
+    .burgerClose {
         display: none;
     }
 
