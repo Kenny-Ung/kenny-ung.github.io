@@ -1,3 +1,18 @@
+//logo animation 
+@keyframes logoAnimation {
+    from {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 // Open burger
 @keyframes openMenu {
     from {
