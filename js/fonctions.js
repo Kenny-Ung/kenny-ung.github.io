@@ -94,7 +94,13 @@ function scrollAnim() {
         opC = document.querySelector(".pC"),
         opPhp = document.querySelector(".pPhp"),
         oBox = document.getElementsByClassName("box"),
-        oCircle2 = document.getElementsByClassName("circle2");
+        oCircle2 = document.getElementsByClassName("circle2"),
+        oH2Contact = document.querySelector(".contactTitle"),
+        oLine2 = document.querySelector(".line2"),
+        oCIn = document.querySelector(".contactLinked"),
+        oCGit = document.querySelector(".contactGit"),
+        oCMail = document.querySelector(".contactMail"),
+        oCollab = document.querySelector(".collab");
 
     //Page Home
     if (window.pageYOffset == heightSection) {
@@ -103,8 +109,8 @@ function scrollAnim() {
 
     //Page Portfolio
     if (window.pageYOffset >= heightSection * 0.75) {
-        oH1Portfolio.style.animation = "fadein 0.7s ease-in-out forwards"
-        oLine.style.animation = "lineIncrease 0.7s 1s ease-in-out forwards"
+        oH1Portfolio.style.animation = "fadein 0.7s ease-in-out forwards";
+        oLine.style.animation = "lineIncrease 0.7s 1s ease-in-out forwards";
 
         let i = 0;
         setInterval( () => {
@@ -117,7 +123,7 @@ function scrollAnim() {
 
     //Page About
     if (window.pageYOffset >= heightSection * 1.75) {
-        oSkills.style.animation = "appearRight .7s ease-in-out forwards";
+        oSkills.style.animation = "fadein .7s ease-in-out forwards";
         opHtml.style.animation = "barIncrease1 .7s .7s ease-in-out forwards";
         opJs.style.animation = "barIncrease2 .7s .7s ease-in-out forwards";
         opC.style.animation = "barIncrease3 .7s .7s ease-in-out forwards";
@@ -149,6 +155,15 @@ function scrollAnim() {
 
     //Page Contact
     if (window.pageYOffset >= heightSection * 2.75) {
+        oH2Contact.style.animation = "fadein 0.7s ease-in-out forwards";
+        oLine2.style.animation = "lineIncrease2 0.7s 0.7s ease-in-out forwards";
 
+        setTimeout(() => {
+            oCIn.style.animation = "fadein 0.7s 0.2s ease-in-out forwards";
+            oCGit.style.animation = "fadein 0.7s 0.4s ease-in-out forwards";
+            oCMail.style.animation = "fadein 0.7s 0.6s ease-in-out forwards";
+        }, 1000);
+
+        oCollab.style.animation = "fadein 0.7s 2s ease-in-out forwards";
     }
 }

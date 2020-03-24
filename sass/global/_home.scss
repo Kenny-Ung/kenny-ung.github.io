@@ -1,39 +1,4 @@
 #home {
-    .panelContainer {
-        width: 200px;
-        height: 200px;
-        //border: 1px solid #CCC;
-        position: absolute;
-        left: 55rem;
-        top: 30rem;
-
-        .panel {
-            width: 100%;
-            height: 100%;
-            background: $white;
-            transform: perspective(600px) rotateY(-35deg);
-
-            
-        }
-        .panel:hover {
-            transform: rotateY(0deg);
-        }
-    }
-
-    .panelContainer:nth-child(2) {
-        left: 66rem;
-        top: 16rem;
-
-        .panel {
-            background: $yellow;
-            transform: perspective(600px) rotateY(35deg);
-        }
-    }
-
-    .panelContainer:nth-child(3) {
-        top: 2rem;
-    }
-
     .row:nth-child(1) {
         height: 25%;
     }

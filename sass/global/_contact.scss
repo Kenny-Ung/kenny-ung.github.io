@@ -1,0 +1,198 @@
+#contact {
+    .row:nth-child(1) {
+        height: 25%;
+        margin-bottom: 1rem;
+
+        h2 {
+            color: $white;
+            position: relative;
+            top: 10rem; 
+            opacity: 0;     
+        }
+
+        .line2 {
+            height: 3px;
+            width: 0rem;
+            background-color: $yellow;
+            border-radius: 0.1rem;
+            display: block;
+            position: relative;
+            top: 10rem;
+        }
+    }
+
+    .row:nth-child(2) {
+        height: 50%;
+
+        .contentContact {
+            @include flex(column, space-evenly, "");
+
+            .border1::before {
+                @include border(50px, "", 350px, "", 80px, 80px, 20px, "", 20px, "");
+                transform: rotate(90deg);
+            }
+    
+            .border2::before {
+                @include border("", 0px, 350px, "", 80px, 80px, "", 20px, 20px, "");
+                transform: rotate(270deg);
+            }
+
+            a {
+                padding-right: 2rem;
+
+                .fab, .far {
+                    color: $yellow;
+                    transform: scale(3.5);
+                }
+
+                .fab:hover {
+                    color: $white;
+                }
+
+                .far:hover {
+                    color: $white;
+                }
+            }
+
+            .contactLinked, .contactGit, .contactMail {
+                display: inline-flex;
+                color: $white;
+                padding-left: 4rem;
+                opacity: 0;
+            }
+        }
+    }
+    
+    .row:nth-child(3) {
+        height: 25%;
+
+        .collab {
+            @include flex(row, center, flex-start);
+            opacity: 0;
+
+            p {
+                font-size: 2rem;
+                color: $yellow;
+                padding-top: 3rem;
+            }
+        }
+    }
+}
+
+/*--------------------------------------------------------- MOBILE --------------------------------------------------------- */ 
+@media screen and (min-width: 576px) {
+    #contact {
+        .row:nth-child(1) {
+            h2 {
+                top: 16rem;        
+            }
+
+            .line2 {
+                top: 16rem;
+            }
+        }
+    
+        .row:nth-child(2) {
+            position: relative;
+            top: 5rem;
+        }
+
+        .row:nth-child(3) {
+            .collab {
+                @include flex(row, center, flex-end);
+
+                p {
+                    padding-top: unset;
+                }
+            }
+        }
+    }
+}
+
+/*--------------------------------------------------------- TABLET --------------------------------------------------------- */ 
+@media screen and (min-width: 768px) { 
+    #contact {
+        .row:nth-child(1) {
+            h2 {
+                top: 10rem;        
+            }
+
+            .line2 {
+                top: 10rem;
+            }
+        }
+    
+        .row:nth-child(2) {
+            position: unset;
+            top: unset;
+
+            .contentContact {
+                @include flex(row, space-evenly, center);
+
+                .border1::before {
+                    @include border(50px, "", 650px, "", 80px, 80px, 20px, "", 20px, "");
+                    transform: rotate(90deg);
+                }
+        
+                .border2::before {
+                    @include border("", 55px, 650px, "", 80px, 80px, "", 20px, 20px, "");
+                    transform: rotate(270deg);
+                }
+
+                .contactLinked, .contactGit, .contactMail {
+                    padding-left: unset;
+                    margin: 0rem auto;
+                }
+            }
+        }
+
+        .row:nth-child(3) {
+            .collab {
+                @include flex(row, center, flex-start);
+
+                p {
+                    font-size: 4rem;
+                    padding-top: 2rem;
+                }
+            }
+        }
+    }
+}
+
+/*--------------------------------------------------------- COMPUTER --------------------------------------------------------- */ 
+@media screen and (min-width: 1024px) { 
+    #contact {
+        .row:nth-child(2) {
+            .contentContact {
+                .border1::before {
+                    @include border(50px, "", 880px, "", 80px, 80px, 20px, "", 20px, "");
+                    transform: rotate(90deg);
+                }
+        
+                .border2::before {
+                    @include border("", 55px, 880px, "", 80px, 80px, "", 20px, 20px, "");
+                    transform: rotate(270deg);
+                }
+            }
+        }
+    }
+}
+
+/*--------------------------------------------------------- COMPUTER xl --------------------------------------------------------- */ 
+@media screen and (min-width: 1024px) { 
+    #contact {
+        .row:nth-child(2) {
+            .contentContact {
+                .border1::before {
+                    @include border(50px, "", 1080px, "", 80px, 80px, 20px, "", 20px, "");
+                    transform: rotate(90deg);
+                }
+        
+                .border2::before {
+                    @include border("", 55px, 1080px, "", 80px, 80px, "", 20px, 20px, "");
+                    transform: rotate(270deg);
+                }
+            }
+        }
+    }
+}
