@@ -16,7 +16,7 @@ const oPageFirst = document.querySelectorAll("body"),
 (function () {
     // Loading
     for (let i = 0; i < oPageFirst.length; i++) {
-        oPageFirst[i].addEventListener("click", () => {
+        oPageFirst[i].addEventListener("mouseover", () => {
             afficherProgressBar();
         }, {once: true});
     }
