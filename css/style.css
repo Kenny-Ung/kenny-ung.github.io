@@ -1160,9 +1160,6 @@ header {
   .menu-mobile {
     all: unset;
   }
-  .logo {
-    left: 50%;
-  }
   #menu {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1181,7 +1178,7 @@ header {
   #menu .leftDiv {
     font-size: 1rem;
     display: block;
-    padding-left: 4rem;
+    padding-left: 5rem;
   }
   #menu .leftDiv span:first-child:before {
     top: 14px;
@@ -1203,7 +1200,7 @@ header {
   }
   #menu .rightDiv {
     display: block;
-    padding-right: 4rem;
+    padding-right: 5rem;
     padding-top: unset;
   }
   #menu .rightDiv .mobile {
@@ -1315,6 +1312,13 @@ header {
   }
 }
 
+/*--------------------------------------------------------- COMPUTER --------------------------------------------------------- */
+@media screen and (min-width: 1024px) {
+  .logo {
+    left: 50%;
+  }
+}
+
 /* # Home */
 #home .row:nth-child(1) {
   height: 25%;
@@ -1419,6 +1423,8 @@ header {
   opacity: 0;
   -webkit-animation: fadein .8s 2s ease-in-out forwards;
           animation: fadein .8s 2s ease-in-out forwards;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 #home .row:nth-child(3) {
@@ -2020,7 +2026,7 @@ header {
   position: absolute;
   top: 50px;
   bottom: "";
-  left: 350px;
+  left: 315px;
   right: "";
   width: 80px;
   height: 80px;
@@ -2038,7 +2044,7 @@ header {
   position: absolute;
   top: "";
   bottom: 0px;
-  left: 350px;
+  left: 315px;
   right: "";
   width: 80px;
   height: 80px;
@@ -2262,7 +2268,7 @@ header {
 }
 
 /*--------------------------------------------------------- COMPUTER xl --------------------------------------------------------- */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
   #contact .row:nth-child(2) .contentContact .border1::before {
     content: '';
     position: absolute;

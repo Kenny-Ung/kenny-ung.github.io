@@ -244,11 +244,6 @@ header {
     header {
         @include flex(column, center, "");
         transition: all 0.5s;
-        // opacity: 0;
-
-        // &:hover {
-        //     opacity: 1;
-        // }
     }
 
     #btnBurger {
@@ -267,17 +262,13 @@ header {
         all: unset;
     }
 
-    .logo {
-        left: 50%;
-    }
-
     #menu {
         @include flex(row, space-between, center);
         
         .leftDiv {
             font-size: 1rem;
             display: block;
-            padding-left: 4rem;
+            padding-left: 5rem;
 
             span:first-child:before {
                 top: 14px;
@@ -306,7 +297,7 @@ header {
 
         .rightDiv {
             display: block;
-            padding-right: 4rem;
+            padding-right: 5rem;
             padding-top: unset;
 
             .mobile {
@@ -375,5 +366,12 @@ header {
                 opacity: 1;
             }
         }
+    }
+}
+
+/*--------------------------------------------------------- COMPUTER --------------------------------------------------------- */  
+@media screen and (min-width: 1024px) { 
+    .logo {
+        left: 50%;
     }
 }

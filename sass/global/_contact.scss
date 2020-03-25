@@ -28,12 +28,12 @@
             @include flex(column, space-evenly, "");
 
             .border1::before {
-                @include border(50px, "", 350px, "", 80px, 80px, 20px, "", 20px, "");
+                @include border(50px, "", 315px, "", 80px, 80px, 20px, "", 20px, "");
                 transform: rotate(90deg);
             }
     
             .border2::before {
-                @include border("", 0px, 350px, "", 80px, 80px, "", 20px, 20px, "");
+                @include border("", 0px, 315px, "", 80px, 80px, "", 20px, 20px, "");
                 transform: rotate(270deg);
             }
 
@@ -179,7 +179,7 @@
 }
 
 /*--------------------------------------------------------- COMPUTER xl --------------------------------------------------------- */ 
-@media screen and (min-width: 1024px) { 
+@media screen and (min-width: 1440px) { 
     #contact {
         .row:nth-child(2) {
             .contentContact {
